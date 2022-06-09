@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:gravity="center"
+        android:text="android12改动：Launcher activity不走onDestroy()"
+        android:textSize="@dimen/_20sp" />
+
+    <Button
+        android:id="@+id/btn_goto_main"
+        android:text="打开干货网接口页面MainActivity(测试接口错误）"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_test_main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开测试MainFragment" />
+
+    <Button
+        android:id="@+id/btn_goto_wan_android"
+        android:text="打开玩安卓接口页面MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50dp" />
+</LinearLayout>

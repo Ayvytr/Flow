@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mvvm-x-demo</string>
+    <string name="cannot_connect_server">无法连接服务器</string>
+    <string name="network_not_available">网络连接中断</string>
+    <string name="other_error">其他错误</string>
+    <string name="network_timeout">请求超时</string>
+</resources>
