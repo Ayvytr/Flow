@@ -1,11 +1,10 @@
 name: Deploy GitHub Pages
 
-# 触发条件：在 push 到 master 分支后
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
