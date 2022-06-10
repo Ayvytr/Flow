@@ -63,6 +63,11 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
      * onCompletion比invokeOnCompletion先调用
      * JobCancellationException走onCompletion()，不走catch()
      * [request.javaClass.name]:请求签名，类似com.ayvytr.coroutines.main.MainViewModel$getAndroidPostFlow$1
+     *
+     * 注意：
+     *  retry的逻辑不能放到[flowOn]之后[collect]之前，不然不生效
+     *  两个[flowOn]中间的代码不能抽取方法，不然异常捕获不到
+     *
      */
     @JvmOverloads
     fun <T> launchFlow(

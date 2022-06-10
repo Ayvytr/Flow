@@ -16,14 +16,14 @@ class MainActivity : BaseActivity<MainViewModel>() {
             tv_error.text = null
             //基本测试
             viewModel.getAndroidPostFlow(
-                false,
+                true,
                 {
                     tv_value.text = it.toString()
                 })
-            viewModel.getIosPostFlow(
-                {
-                    tv_value.text = it.toString()
-                })
+//            viewModel.getIosPostFlow(
+//                {
+//                    tv_value.text = it.toString()
+//                })
 
 //            viewModel.getAndroidPostFlow(
 //                false,
