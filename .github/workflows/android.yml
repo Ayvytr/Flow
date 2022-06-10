@@ -20,7 +20,7 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 6.7.1
-          arguments: build --dry-run # just test build configuration
+          arguments: build --dry-run --stacktrace # just test build configuration
 
       - uses: gradle/gradle-build-action@v2
         with:

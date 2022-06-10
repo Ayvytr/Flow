@@ -1,4 +1,3 @@
-
 ### Android template
 # Built application files
 *.apk
@@ -73,3 +72,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+/flow/secret.gpg
