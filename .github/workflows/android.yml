@@ -21,7 +21,7 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-version: 7.3.3
-          arguments: build --dry-run --stacktrace # just test build configuration
+          arguments: build --dry-run  # just test build configuration
 
       - uses: gradle/gradle-build-action@v2
         with:
