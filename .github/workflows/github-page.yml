@@ -16,10 +16,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up JDK
+      - name: Set up the Java JDK
         uses: actions/setup-java@v3
         with:
           java-version: 11
+          distribution: 'adopt'
 
       # 生成javadoc
       - uses: gradle/gradle-build-action@v2
