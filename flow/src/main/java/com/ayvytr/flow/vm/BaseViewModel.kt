@@ -124,6 +124,67 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
         }
     }
 
+    @JvmOverloads
+    fun <T, R, OUT> zipFlow(
+        r1: suspend () -> T,
+        r2: suspend () -> R,
+        transform: (T, R) -> OUT,
+        onSuccess: (OUT) -> Unit,
+        showLoading: Boolean = true,
+        retry: Boolean = false,
+        repeatSameJob: Boolean = false,
+        onError: ErrorObserver? = object: ErrorObserver {}
+    ) {
+        //requestKey代表调用到当前位置，毫秒数代表具体的某一次调用
+        val requestKey = r1.javaClass.name + "," +  r2.javaClass.name
+        val key = "$requestKey:${System.currentTimeMillis()}"
+
+        synchronized(this) {
+            if (repeatSameJob && jobList.any { it.first.contains(requestKey) }) {
+                return
+            }
+        }
+
+        val job = launch {
+            var flow = flow<OUT> {
+                //async{}.await()问题：catch不到404异常
+//                val v1 = async { r1.invoke() }.await()
+//                val v2 = async { r2.invoke() }.await()
+                emit(transform(r1.invoke(), r2.invoke()))
+            }.flowOn(Dispatchers.IO)
+                .onStart {
+                    if (showLoading) {
+                        //显示loading
+                        view?.showLoading()
+                    }
+                }
+            if (retry) {
+                flow = flow.retry(BaseConfig.networkRetryCount.toLong())
+            }
+            flow.catch {
+                onError?.onError(view, BaseConfig.networkExceptionConverter.invoke(it))
+            }.flowOn(Dispatchers.Main)
+                .collect {
+                    onSuccess.invoke(it)
+                }
+        }
+
+        addJob(key, showLoading, job)
+
+        job.invokeOnCompletion {
+            removeJobByKey(key)
+
+            if (showLoading) {
+                //如果没有正在loading的接口，隐藏loading
+                val isEmpty = jobList.filter { it.second }.isEmpty()
+                if (isEmpty) {
+                    view?.showLoading(false)
+                }
+            }
+        }
+    }
+
+
     private fun addJob(key: String, showLoading: Boolean, job: Job) {
         jobList.add(Triple(key, showLoading, job))
     }

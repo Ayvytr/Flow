@@ -3,7 +3,7 @@ package com.ayvytr.coroutines.wanandroid
 import android.os.Bundle
 import com.ayvytr.coroutines.R
 import com.ayvytr.flow.BaseActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_wan_android.*
 
 class WanAndroidActivity: BaseActivity<WanAndroidViewModel>() {
     override fun initView(savedInstanceState: Bundle?) {
@@ -11,10 +11,13 @@ class WanAndroidActivity: BaseActivity<WanAndroidViewModel>() {
         setContentView(R.layout.activity_wan_android)
     }
     override fun initData(savedInstanceState: Bundle?) {
-        viewModel.getWanAndroidHome(
-            {
-                tv_value.text = it.toString()
-            })
+//        viewModel.getWanAndroidHome(
+//            {
+//                tv_value.text = it.toString()
+//            })
+        viewModel.mergeFLow {
+            tv_value.text = it.toString()
+        }
 
     }
 }

@@ -58,6 +58,11 @@ class App: Application() {
                 }
                 is HttpException          -> {
                     exception = NetworkException(e, R.string.cannot_connect_server, e.code())
+                    e.message?.apply {
+                        if(contains("404")) {
+                            exception.stringId = R.string.http_404
+                        }
+                    }
                 }
                 else                      -> {
                     NetworkException(e, R.string.other_error)
