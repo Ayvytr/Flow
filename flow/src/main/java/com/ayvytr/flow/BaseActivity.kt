@@ -27,6 +27,10 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initViewModel()
+        initBaseObserver(savedInstanceState)
+    }
+
+    private fun initBaseObserver(savedInstanceState: Bundle?) {
         baseObserver = object:
             BaseLifecycleObserver {
             override fun onCreateEvent() {
