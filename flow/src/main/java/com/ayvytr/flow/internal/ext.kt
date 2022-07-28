@@ -19,7 +19,7 @@ inline fun <reified VM> getVmClass(obj: Any): VM {
             return it
         }
     }
-    throw TypeCastException("Cannot find type generic type VM")
+    throw TypeCastException("Cannot find generic type VM")
 }
 
 internal fun StackTraceElement.toKey(): String {
