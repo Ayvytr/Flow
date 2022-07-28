@@ -14,7 +14,7 @@ import com.ayvytr.flow.vm.BaseViewModel
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
  * @since 0.0.1
  */
-open class BaseActivity<T: BaseViewModel>: AppCompatActivity(), IView {
+open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
 
     /**
      * 写成lateinit，在onCreate初始化的原因：1.传savedInstanceState；2.在继承[BaseActivity]时，可以把

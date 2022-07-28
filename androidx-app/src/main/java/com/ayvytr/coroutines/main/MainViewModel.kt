@@ -2,15 +2,15 @@ package com.ayvytr.coroutines.main
 
 import com.ayvytr.coroutines.api.GankApi
 import com.ayvytr.coroutines.bean.BaseGank
+import com.ayvytr.flow.base.IView
 import com.ayvytr.flow.exception.NetworkException
-import com.ayvytr.flow.observer.ErrorObserver
 import com.ayvytr.flow.vm.BaseViewModel
 import com.ayvytr.network.ApiClient
 
 /**
  * @author EDZ
  */
-class MainViewModel : BaseViewModel() {
+class MainViewModel : BaseViewModel<IView>() {
     val gankApi = ApiClient.create(GankApi::class.java)
 
     fun getAndroidPostFlow(
@@ -28,12 +28,12 @@ class MainViewModel : BaseViewModel() {
         launchFlow({ gankApi.getIosGankSuspend() }, success, onError = error)
     }
 
-    fun getAndroidPostFlowErrorObserver(
-        retry: Boolean,
-        success: (BaseGank) -> Unit,
-        error: ErrorObserver? = null
-    ) {
-        launchFlow({ gankApi.getAndroidGankSuspend() }, success, true, retry, true, error)
-    }
+//    fun getAndroidPostFlowErrorObserver(
+//        retry: Boolean,
+//        success: (BaseGank) -> Unit,
+//        error: ErrorObserver? = null
+//    ) {
+//        launchFlow({ gankApi.getAndroidGankSuspend() }, success, true, retry, true, error)
+//    }
 
 }

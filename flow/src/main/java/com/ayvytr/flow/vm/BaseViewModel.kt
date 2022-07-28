@@ -14,8 +14,8 @@ import java.util.*
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
  * @since 0.0.1
  */
-open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
-    var view: IView? = null
+open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScope() {
+    lateinit var view: @UnsafeVariance V
 
     //job管理
     protected val jobList by lazy {
@@ -25,30 +25,7 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
     override fun onCleared() {
         cancelAllJob()
         cancel()
-        view = null
     }
-
-    /**
-     * 注意：如果实现了[onError]，就不会调用[IView.showMessage]，需要重写并保留错误提示请使用[ErrorObserver]
-     * 重载
-     */
-    fun <T> launchFlow(
-        request: suspend () -> T,
-        onSuccess: (T) -> Unit,
-        showLoading: Boolean = true,
-        retry: Boolean = false,
-        repeatSameJob: Boolean = false,
-        onError: ((NetworkException) -> Unit)? = null
-    ) {
-        launchFlow(request, onSuccess, showLoading, retry, repeatSameJob, object: ErrorObserver {
-            override fun onError(view: IView?, e: NetworkException) {
-                onError?.apply {
-                    onError.invoke(e)
-                } ?: super.onError(view, e)
-            }
-        })
-    }
-
 
     /**
      * [launch]和[flow]实际在这里执行.
@@ -65,18 +42,17 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
      * [request.javaClass.name]:请求签名，类似com.ayvytr.coroutines.main.MainViewModel$getAndroidPostFlow$1
      *
      * 注意：
+     *  如果实现了[onError]，就不会调用[IView.showMessage]，需要重写并保留错误提示请使用[ErrorObserver]
      *  retry的逻辑不能放到[flowOn]之后[collect]之前，不然不生效
      *  两个[flowOn]中间的代码不能抽取方法，不然异常捕获不到
-     *
      */
-    @JvmOverloads
     fun <T> launchFlow(
         request: suspend () -> T,
         onSuccess: (T) -> Unit,
         showLoading: Boolean = true,
         retry: Boolean = false,
         repeatSameJob: Boolean = false,
-        onError: ErrorObserver? = object: ErrorObserver {}
+        onError: ((NetworkException) -> Unit)? = null
     ) {
         //requestKey代表调用到当前位置，毫秒数代表具体的某一次调用
         val requestKey = request.javaClass.name
@@ -102,7 +78,7 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
                 flow = flow.retry(BaseConfig.networkRetryCount.toLong())
             }
             flow.catch {
-                onError?.onError(view, BaseConfig.networkExceptionConverter.invoke(it))
+                onError?.invoke(BaseConfig.networkExceptionConverter.invoke(it))
             }.flowOn(Dispatchers.Main)
                 .collect {
                     onSuccess.invoke(it)
@@ -123,6 +99,81 @@ open class BaseViewModel : ViewModel(), CoroutineScope by MainScope() {
             }
         }
     }
+
+
+    /**
+     * [launch]和[flow]实际在这里执行.
+     *
+     * [showLoading]：是否显示loading（比如LoadingDialog)，默认true
+     * [retry]: 接口返回错误后是否重试，默认false
+     * [repeatSameJob]: 是否重复请求相同签名[request.javaClass.name]的接口，默认false
+     * [onError]: 默认显示toast. 注意重载：
+     *      object: ErrorObserver {} 是方便重写的，可保留原错误提示并增加更多内容
+     *      ((NetworkException) -> Unit)? 是方便覆盖的，如果不为空，覆盖默认错误显示逻辑
+     *
+     * onCompletion比invokeOnCompletion先调用
+     * JobCancellationException走onCompletion()，不走catch()
+     * [request.javaClass.name]:请求签名，类似com.ayvytr.coroutines.main.MainViewModel$getAndroidPostFlow$1
+     *
+     * 注意：
+     *  retry的逻辑不能放到[flowOn]之后[collect]之前，不然不生效
+     *  两个[flowOn]中间的代码不能抽取方法，不然异常捕获不到
+     *
+     */
+//    @JvmOverloads
+//    fun <T> launchFlow(
+//        request: suspend () -> T,
+//        onSuccess: (T) -> Unit,
+//        showLoading: Boolean = true,
+//        retry: Boolean = false,
+//        repeatSameJob: Boolean = false,
+//        onError: ErrorObserver? = object: ErrorObserver {}
+//    ) {
+//        //requestKey代表调用到当前位置，毫秒数代表具体的某一次调用
+//        val requestKey = request.javaClass.name
+//        val key = "$requestKey:${System.currentTimeMillis()}"
+//
+//        synchronized(this) {
+//            if (repeatSameJob && jobList.any { it.first.contains(requestKey) }) {
+//                return
+//            }
+//        }
+//
+//        val job = launch {
+//            var flow = flow<T> {
+//                emit(request.invoke())
+//            }.flowOn(Dispatchers.IO)
+//                .onStart {
+//                    if (showLoading) {
+//                        //显示loading
+//                        view?.showLoading()
+//                    }
+//                }
+//            if (retry) {
+//                flow = flow.retry(BaseConfig.networkRetryCount.toLong())
+//            }
+//            flow.catch {
+//                onError?.onError(view, BaseConfig.networkExceptionConverter.invoke(it))
+//            }.flowOn(Dispatchers.Main)
+//                .collect {
+//                    onSuccess.invoke(it)
+//                }
+//        }
+//
+//        addJob(key, showLoading, job)
+//
+//        job.invokeOnCompletion {
+//            removeJobByKey(key)
+//
+//            if (showLoading) {
+//                //如果没有正在loading的接口，隐藏loading
+//                val isEmpty = jobList.filter { it.second }.isEmpty()
+//                if (isEmpty) {
+//                    view?.showLoading(false)
+//                }
+//            }
+//        }
+//    }
 
     @JvmOverloads
     fun <T, R, OUT> zipFlow(

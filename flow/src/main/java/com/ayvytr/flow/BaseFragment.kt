@@ -18,7 +18,7 @@ import com.ayvytr.flow.vm.BaseViewModel
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
  * @since 0.0.1
  */
-abstract class BaseFragment<T: BaseViewModel>: Fragment(), IView {
+abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
 
     protected lateinit var viewModel: T
 
