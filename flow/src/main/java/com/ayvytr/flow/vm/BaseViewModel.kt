@@ -48,10 +48,10 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
     fun <T> launchFlow(
         request: suspend () -> T,
         onSuccess: (T) -> Unit,
+        onError: ((NetworkException) -> Unit) = { view.showMessage(it.stringId) },
         showLoading: Boolean = true,
         retry: Boolean = false,
         repeatSameJob: Boolean = false,
-        onError: ((NetworkException) -> Unit)? = { view.showMessage(it.stringId) }
     ) {
         //requestKey代表调用到当前位置，毫秒数代表具体的某一次调用
         val requestKey = request.javaClass.name
@@ -77,7 +77,7 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
                 flow = flow.retry(BaseConfig.networkRetryCount.toLong())
             }
             flow.catch {
-                onError?.invoke(BaseConfig.networkExceptionConverter.invoke(it))
+                onError.invoke(BaseConfig.networkExceptionConverter.invoke(it))
             }.flowOn(Dispatchers.Main)
                 .collect {
                     onSuccess.invoke(it)
@@ -110,10 +110,10 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
         request2: suspend () -> R,
         transform: (T, R) -> OUT,
         onSuccess: (OUT) -> Unit,
+        onError: ((NetworkException) -> Unit) = { view.showMessage(it.stringId) },
         showLoading: Boolean = true,
         retry: Boolean = false,
         repeatSameJob: Boolean = false,
-        onError: ((NetworkException) -> Unit)? = { view.showMessage(it.stringId) }
     ) {
         //requestKey代表调用到当前位置，毫秒数代表具体的某一次调用
         val requestKey = request1.javaClass.name + "," + request2.javaClass.name
@@ -142,7 +142,7 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
                 flow = flow.retry(BaseConfig.networkRetryCount.toLong())
             }
             flow.catch {
-                onError?.invoke(BaseConfig.networkExceptionConverter.invoke(it))
+                onError.invoke(BaseConfig.networkExceptionConverter.invoke(it))
             }.flowOn(Dispatchers.Main)
                 .collect {
                     onSuccess.invoke(it)

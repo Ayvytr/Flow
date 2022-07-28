@@ -33,6 +33,7 @@ class WanAndroidViewModel: BaseViewModel<WanAndroidView>() {
         launchFlow(
             { wanAndroidApi.getHomeArticle() },
             { view.showWanAndroidHome(it) },
-            onError = { view?.showMessage(it.stringId) })
+            { view.showMessage(it.stringId) }
+        )
     }
 }
