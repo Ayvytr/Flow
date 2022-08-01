@@ -5,7 +5,7 @@
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.1'
+implementation 'io.github.ayvytr:flow:0.0.2'
 ```
 
 
