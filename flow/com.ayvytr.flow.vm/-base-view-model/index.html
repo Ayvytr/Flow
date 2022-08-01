@@ -1,190 +1,152 @@
-<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>BaseViewModel</title>
-    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../";</script>
-    <script>const storage = localStorage.getItem("dokka-dark-mode")
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
 const savedDarkMode = storage ? JSON.parse(storage) : false
 if(savedDarkMode === true){
     document.getElementsByTagName("html")[0].classList.add("theme-dark")
 }</script>
-<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
-<link href="../../../styles/style.css" rel="Stylesheet">
-<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
-<link href="../../../styles/main.css" rel="Stylesheet">
-<link href="../../../styles/prism.css" rel="Stylesheet">
-<link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
-<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
-</head>
-<body>
-<div class="navigation-wrapper" id="navigation-wrapper">
-    <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name">
-            <a href="../../../index.html">
-                    <span>flow</span>
-            </a>
-    </div>
-    <div>
-0.0.1    </div>
-    <div class="pull-right d-flex">
-        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><link href="../../../styles/prism.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script><script type="text/javascript" src="../../../scripts/main.js" async="async"></script><script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>  </head>
+  <body>
+    <div class="navigation-wrapper" id="navigation-wrapper">
+      <div id="leftToggler"><span class="icon-toggler"></span></div>
+      <div class="library-name"><a href="../../../index.html">flow</a></div>
+      <div>0.0.2</div>
+      <div class="pull-right d-flex"><button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
+      </div>
     </div>
-</div>
-<div id="container">
-    <div id="leftColumn">
+    <div id="container">
+      <div id="leftColumn">
         <div id="sideMenu"></div>
-    </div>
-    <div id="main">
-<div class="main-content" id="content" pageIds="flow::com.ayvytr.flow.vm/BaseViewModel///PointingToDeclaration//859358944">
-  <div class="breadcrumbs"><a href="../../../index.html">flow</a><span class="delimiter">/</span><a href="../index.html">com.ayvytr.flow.vm</a><span class="delimiter">/</span><a href="index.html">BaseViewModel</a></div>
-  <div class="cover ">
-    <h1 class="cover"><span>Base</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">BaseViewModel</a> : <span data-unresolved-link="androidx.lifecycle/ViewModel///PointingToDeclaration/">ViewModel</span>, <span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"><a href="index.html">BaseViewModel</a>.</p><h4 class="">Author</h4><p class="paragraph">Ayvytr <a href="https://github.com/Ayvytr">'s GitHub</a></p><h4 class="">Since</h4><p class="paragraph">0.0.1</p></div></div>
-  </div>
-  <div class="tabbedcontent">
-    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
-    <div class="tabs-section-body">
-      <h2 class="tabbedcontent">Constructors</h2>
-      <div class="table" data-togglable="Constructors"><a data-name="9224262%2FConstructors%2F859358944" anchor-label="BaseViewModel" id="9224262%2FConstructors%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue TabbedContent">
-            <div class=""><span class="inline-flex">
-                <div><a href="-base-view-model.html"><span>Base</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="9224262%2FConstructors%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-base-view-model.html"><span class="token function">BaseViewModel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <h2 class="">Functions</h2>
-      <div class="table" data-togglable="Functions"><a data-name="-1936886459%2FFunctions%2F859358944" anchor-label="clear" id="-1936886459%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-1936886459%2FFunctions%2F859358944"><span><span>clear</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1936886459%2FFunctions%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="androidx.annotation/MainThread///PointingToDeclaration/"><span class="token annotation">MainThread</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1936886459%2FFunctions%2F859358944"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
+      <div id="main"><script type="text/javascript" src="../../../scripts/main.js"></script>
+        <div class="main-content" id="content" pageIds="flow::com.ayvytr.flow.vm/BaseViewModel///PointingToDeclaration//859358944">
+          <div class="breadcrumbs"><a href="../../../index.html">flow</a>/<a href="../index.html">com.ayvytr.flow.vm</a>/<a href="index.html">BaseViewModel</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>Base</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></h1>
+            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">BaseViewModel</a><span class="token operator">&lt;</span><span class="token keyword">out </span><a href="index.html">V</a><span class="token operator"> : </span><a href="../../com.ayvytr.flow.base/-i-view/index.html">IView</a><span class="token operator">&gt;</span> : <span data-unresolved-link="androidx.lifecycle/ViewModel///PointingToDeclaration/">ViewModel</span>, <span data-unresolved-link="kotlinx.coroutines/CoroutineScope///PointingToDeclaration/">CoroutineScope</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph"><a href="index.html">BaseViewModel</a>.</p><h4 class="">Author</h4><p class="paragraph">Ayvytr <a href="https://github.com/Ayvytr">'s GitHub</a></p><h4 class="">Since</h4><p class="paragraph">0.0.2 变更职能：增加<a href="index.html">BaseViewModel</a>泛型<a href="../../com.ayvytr.flow.base/-i-view/index.html">IView</a>，支持BaseActivity, BaseFragment重写：     1.方便接口回调写在BaseViewModel中，Activity,Fragment只做需要的ui回调     2.方便回传参数.</p><p class="paragraph">增加 <a href="zip-flow.html">zipFlow</a></p><p class="paragraph">0.0.1 增加<a href="launch-flow.html">launchFlow</a>等基础功能</p></div></div>
           </div>
-        </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+            <div class="tabs-section-body">
+              <h2 class="tabbedcontent">Constructors</h2>
+              <div class="table" data-togglable="Constructors"><a data-name="9224262%2FConstructors%2F859358944" anchor-label="BaseViewModel" id="9224262%2FConstructors%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue TabbedContent">
+                    <div class=""><span class="inline-flex"><a href="-base-view-model.html">BaseViewModel</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="9224262%2FConstructors%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-base-view-model.html"><span class="token function">BaseViewModel</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="-1936886459%2FFunctions%2F859358944" anchor-label="clear" id="-1936886459%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="index.html#-1936886459%2FFunctions%2F859358944"><span><span>clear</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1936886459%2FFunctions%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="androidx.annotation/MainThread///PointingToDeclaration/"><span class="token annotation">MainThread</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1936886459%2FFunctions%2F859358944"><span class="token function">clear</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 <a data-name="-215894976%2FFunctions%2F859358944" anchor-label="getTag" id="-215894976%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-215894976%2FFunctions%2F859358944"><span>get</span><wbr></wbr><span><span>Tag</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-215894976%2FFunctions%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html#-215894976%2FFunctions%2F859358944">T</a><span class="token operator"> : </span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span><span class="token operator">&gt; </span><a href="index.html#-215894976%2FFunctions%2F859358944"><span class="token function">getTag</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="kotlin/String///PointingToDeclaration/">String</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html#-215894976%2FFunctions%2F859358944">T</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-<a data-name="950605075%2FFunctions%2F859358944" anchor-label="launchFlow" id="950605075%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="launch-flow.html"><span>launch</span><wbr></wbr><span><span>Flow</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="950605075%2FFunctions%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmOverloads///PointingToDeclaration/"><span class="token annotation">JvmOverloads</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token operator">&gt; </span><a href="launch-flow.html"><span class="token function">launchFlow</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;request<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onSuccess<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;showLoading<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;retry<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;repeatSameJob<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onError<span class="token operator">: </span><a href="../../com.ayvytr.flow.observer/-error-observer/index.html">ErrorObserver</a><span class="token operator">?</span><span class="token operator"> = </span>object: ErrorObserver {}</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph"><span data-unresolved-link="kotlinx.coroutines//launch/kotlinx.coroutines.CoroutineScope#kotlin.coroutines.CoroutineContext#kotlinx.coroutines.CoroutineStart#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,kotlin.Unit]/PointingToDeclaration/">launch</span>和<span data-unresolved-link="kotlinx.coroutines.flow//flow/#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.flow.FlowCollector[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/">flow</span>实际在这里执行.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token operator">&gt; </span><a href="launch-flow.html"><span class="token function">launchFlow</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;request<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onSuccess<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;showLoading<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;retry<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;repeatSameJob<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onError<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">注意：如果实现了<a href="launch-flow.html">onError</a>，就不会调用<a href="../../com.ayvytr.flow.base/-i-view/show-message.html">IView.showMessage</a>，需要重写并保留错误提示请使用<a href="../../com.ayvytr.flow.observer/-error-observer/index.html">ErrorObserver</a> 重载</p></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="index.html#-215894976%2FFunctions%2F859358944"><span>get</span><wbr></wbr><span><span>Tag</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-215894976%2FFunctions%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html#-215894976%2FFunctions%2F859358944">T</a><span class="token operator"> : </span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span><span class="token operator">&gt; </span><a href="index.html#-215894976%2FFunctions%2F859358944"><span class="token function">getTag</span></a><span class="token punctuation">(</span>p0<span class="token operator">: </span><span data-unresolved-link="kotlin/String///PointingToDeclaration/">String</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html#-215894976%2FFunctions%2F859358944">T</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1028251462%2FFunctions%2F859358944" anchor-label="launchFlow" id="1028251462%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="launch-flow.html"><span>launch</span><wbr></wbr><span><span>Flow</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1028251462%2FFunctions%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token operator">&gt; </span><a href="launch-flow.html"><span class="token function">launchFlow</span></a><span class="token punctuation">(</span>request<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">, </span>onSuccess<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="launch-flow.html">T</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token punctuation">, </span>onError<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token operator"> = </span>{ view.showMessage(it.stringId) }<span class="token punctuation">, </span>showLoading<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span>retry<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span>repeatSameJob<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph"><span data-unresolved-link="kotlinx.coroutines//launch/kotlinx.coroutines.CoroutineScope#kotlin.coroutines.CoroutineContext#kotlinx.coroutines.CoroutineStart#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.CoroutineScope,kotlin.Unit]/PointingToDeclaration/">launch</span>和<span data-unresolved-link="kotlinx.coroutines.flow//flow/#kotlin.coroutines.SuspendFunction1[kotlinx.coroutines.flow.FlowCollector[TypeParam(bounds=[kotlin.Any?])],kotlin.Unit]/PointingToDeclaration/">flow</span>实际在这里执行.</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 <a data-name="-1567230750%2FFunctions%2F859358944" anchor-label="setTagIfAbsent" id="-1567230750%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-1567230750%2FFunctions%2F859358944"><span>set</span><wbr></wbr><span>Tag</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Absent</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1567230750%2FFunctions%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a><span class="token operator"> : </span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span><span class="token operator">&gt; </span><a href="index.html#-1567230750%2FFunctions%2F859358944"><span class="token function">setTagIfAbsent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">p0<span class="token operator">: </span><span data-unresolved-link="kotlin/String///PointingToDeclaration/">String</span><span class="token punctuation">, </span></span><span class="parameter ">p1<span class="token operator">: </span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="index.html#-1567230750%2FFunctions%2F859358944"><span>set</span><wbr></wbr><span>Tag</span><wbr></wbr><span>If</span><wbr></wbr><span><span>Absent</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1567230750%2FFunctions%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a><span class="token operator"> : </span><span data-unresolved-link="kotlin/Any///PointingToDeclaration/">Any</span><span class="token operator">&gt; </span><a href="index.html#-1567230750%2FFunctions%2F859358944"><span class="token function">setTagIfAbsent</span></a><span class="token punctuation">(</span>p0<span class="token operator">: </span><span data-unresolved-link="kotlin/String///PointingToDeclaration/">String</span><span class="token punctuation">, </span>p1<span class="token operator">: </span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html#-1567230750%2FFunctions%2F859358944">T</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="455201977%2FFunctions%2F859358944" anchor-label="zipFlow" id="455201977%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="zip-flow.html"><span>zip</span><wbr></wbr><span><span>Flow</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="455201977%2FFunctions%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmOverloads///PointingToDeclaration/"><span class="token annotation">JvmOverloads</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token operator">&gt; </span><a href="zip-flow.html"><span class="token function">zipFlow</span></a><span class="token punctuation">(</span>request1<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span>request2<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">, </span>transform<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token punctuation">, </span>onSuccess<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token punctuation">, </span>onError<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token operator"> = </span>{ view.showMessage(it.stringId) }<span class="token punctuation">, </span>showLoading<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span>retry<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span>repeatSameJob<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">通过<a href="zip-flow.html">transform</a>,合并<a href="zip-flow.html">request1</a>请求的<a href="zip-flow.html">T</a>和<a href="zip-flow.html">request2</a>请求的<a href="zip-flow.html">R</a>，<a href="zip-flow.html">onSuccess</a>返回<a href="zip-flow.html">OUT</a></p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-<a data-name="350755907%2FFunctions%2F859358944" anchor-label="zipFlow" id="350755907%2FFunctions%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="zip-flow.html"><span>zip</span><wbr></wbr><span><span>Flow</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="350755907%2FFunctions%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmOverloads///PointingToDeclaration/"><span class="token annotation">JvmOverloads</span></span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token operator">&gt; </span><a href="zip-flow.html"><span class="token function">zipFlow</span></a><span class="token punctuation">(</span><span class="parameters wrapped"><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;r1<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;r2<span class="token operator">: </span><span class="token keyword">suspend </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;transform<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="zip-flow.html">T</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="zip-flow.html">R</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onSuccess<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="zip-flow.html">OUT</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;showLoading<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;retry<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;repeatSameJob<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter indented">&nbsp;&nbsp;&nbsp;&nbsp;onError<span class="token operator">: </span><a href="../../com.ayvytr.flow.observer/-error-observer/index.html">ErrorObserver</a><span class="token operator">?</span><span class="token operator"> = </span>object: ErrorObserver {}</span></span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 class="">Properties</h2>
-      <div class="table" data-togglable="Properties"><a data-name="-1654120400%2FProperties%2F859358944" anchor-label="coroutineContext" id="-1654120400%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="index.html#-1654120400%2FProperties%2F859358944">coroutineContext</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1654120400%2FProperties%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="-1654120400%2FProperties%2F859358944" anchor-label="coroutineContext" id="-1654120400%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="index.html#-1654120400%2FProperties%2F859358944">coroutineContext</a><span class="token operator">: </span><span data-unresolved-link="kotlin.coroutines/CoroutineContext///PointingToDeclaration/">CoroutineContext</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+              <h2 class="">Properties</h2>
+              <div class="table" data-togglable="Properties"><a data-name="-1654120400%2FProperties%2F859358944" anchor-label="coroutineContext" id="-1654120400%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="index.html#-1654120400%2FProperties%2F859358944">coroutineContext</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1654120400%2FProperties%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="-1654120400%2FProperties%2F859358944" anchor-label="coroutineContext" id="-1654120400%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="index.html#-1654120400%2FProperties%2F859358944">coroutineContext</a><span class="token operator">: </span><span data-unresolved-link="kotlin.coroutines/CoroutineContext///PointingToDeclaration/">CoroutineContext</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 <a data-name="1389012092%2FProperties%2F859358944" anchor-label="view" id="1389012092%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-        <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-          <div class="main-subrow keyValue ">
-            <div class=""><span class="inline-flex">
-                <div><a href="view.html">view</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1389012092%2FProperties%2F859358944"></span>
-                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                </span></span></div>
-            <div>
-              <div class="title">
-                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="1389012092%2FProperties%2F859358944" anchor-label="view" id="1389012092%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="view.html">view</a><span class="token operator">: </span><a href="../../com.ayvytr.flow.base/-i-view/index.html">IView</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="view.html">view</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1389012092%2FProperties%2F859358944"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="1389012092%2FProperties%2F859358944" anchor-label="view" id="1389012092%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="view.html">view</a><span class="token operator">: </span><span><span class="token annotation">@</span><span data-unresolved-link="kotlin/UnsafeVariance///PointingToDeclaration/"><span class="token annotation">UnsafeVariance</span></span> </span><a href="index.html">V</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
       </div>
     </div>
-  </div>
-</div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
-                class="pull-right"><span>Generated by </span><a
-                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
-        </div>
-    </div>
-</div>
-</body>
+  </body>
 </html>
+

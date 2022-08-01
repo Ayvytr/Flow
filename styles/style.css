@@ -146,10 +146,6 @@ html ::-webkit-scrollbar-thumb {
     overflow-wrap: break-word;
 }
 
-.breadcrumbs .delimiter {
-    margin: auto 2px;
-}
-
 .tabs-section > .section-tab:first-child,
 .platform-hinted > .platform-bookmarks-row > .platform-bookmark:first-child {
     margin-left: 0;
@@ -232,7 +228,6 @@ html ::-webkit-scrollbar-thumb {
     margin-top: 8px;
 }
 
-p.paragraph:first-child,
 .brief p.paragraph {
     margin-top: 0;
 }
@@ -301,7 +296,6 @@ code.paragraph {
 }
 
 .overview > .navButton {
-    position: absolute;
     align-items: center;
     display: flex;
     justify-content: flex-end;
@@ -434,7 +428,6 @@ code.paragraph {
     align-items: center;
     color: var(--default-font-color);
     overflow: hidden;
-    padding-left: 23px;
 }
 
 
@@ -753,6 +746,7 @@ td.content {
 }
 
 .main-subrow .anchor-icon {
+    padding: 0 8px;
     opacity: 0;
     transition: 0.2s 0.5s;
 }
@@ -771,9 +765,8 @@ td.content {
 
 .main-subrow .anchor-wrapper {
     position: relative;
-    width: 24px;
+    width: 16px;
     height: 16px;
-    margin-left: 3px;
 }
 
 .inline-flex {
@@ -783,6 +776,7 @@ td.content {
 .platform-hinted {
     flex: auto;
     display: block;
+    margin-bottom: 5px;
 }
 
 .platform-hinted > .platform-bookmarks-row > .platform-bookmark {
@@ -886,17 +880,7 @@ td.content {
     padding-bottom: 0;
 }
 
-.parameters.wrapped > .parameter {
-    display: block;
-}
-
-.table-row .inline-comment {
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.table-row .with-platform-tabs .sourceset-depenent-content .brief,
-.table-row .with-platform-tabs .sourceset-depenent-content .inline-comment {
+.table-row .with-platform-tabs .sourceset-depenent-content .brief {
     padding: 8px;
 }
 

@@ -15,16 +15,12 @@ $dokka.location:com.ayvytr.flow.exception/NetworkException/isValidStringId/#/Poi
 $dokka.location:com.ayvytr.flow.exception/NetworkException/stringId/#/PointingToDeclaration/flow/com.ayvytr.flow.exception/-network-exception/string-id.html
 $dokka.location:com.ayvytr.flow.internal////PointingToDeclaration/flow/com.ayvytr.flow.internal/index.html
 $dokka.location:com.ayvytr.flow.internal//getVmClass/#kotlin.Any/PointingToDeclaration/flow/com.ayvytr.flow.internal/get-vm-class.html
-$dokka.location:com.ayvytr.flow.observer////PointingToDeclaration/flow/com.ayvytr.flow.observer/index.html
-$dokka.location:com.ayvytr.flow.observer/ErrorObserver///PointingToDeclaration/flow/com.ayvytr.flow.observer/-error-observer/index.html
-$dokka.location:com.ayvytr.flow.observer/ErrorObserver/onError/#com.ayvytr.flow.base.IView?#com.ayvytr.flow.exception.NetworkException/PointingToDeclaration/flow/com.ayvytr.flow.observer/-error-observer/on-error.html
 $dokka.location:com.ayvytr.flow.vm////PointingToDeclaration/flow/com.ayvytr.flow.vm/index.html
 $dokka.location:com.ayvytr.flow.vm/BaseViewModel///PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/index.html
 $dokka.location:com.ayvytr.flow.vm/BaseViewModel/BaseViewModel/#/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/-base-view-model.html
-$dokka.location:com.ayvytr.flow.vm/BaseViewModel/launchFlow/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean#com.ayvytr.flow.observer.ErrorObserver?/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/launch-flow.html
-$dokka.location:com.ayvytr.flow.vm/BaseViewModel/launchFlow/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean#kotlin.Function1[com.ayvytr.flow.exception.NetworkException,kotlin.Unit]?/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/launch-flow.html
+$dokka.location:com.ayvytr.flow.vm/BaseViewModel/launchFlow/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[com.ayvytr.flow.exception.NetworkException,kotlin.Unit]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/launch-flow.html
 $dokka.location:com.ayvytr.flow.vm/BaseViewModel/view/#/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/view.html
-$dokka.location:com.ayvytr.flow.vm/BaseViewModel/zipFlow/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function2[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean#com.ayvytr.flow.observer.ErrorObserver?/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/zip-flow.html
+$dokka.location:com.ayvytr.flow.vm/BaseViewModel/zipFlow/#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.coroutines.SuspendFunction0[TypeParam(bounds=[kotlin.Any?])]#kotlin.Function2[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]#kotlin.Function1[TypeParam(bounds=[kotlin.Any?]),kotlin.Unit]#kotlin.Function1[com.ayvytr.flow.exception.NetworkException,kotlin.Unit]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/flow/com.ayvytr.flow.vm/-base-view-model/zip-flow.html
 $dokka.location:com.ayvytr.flow////PointingToDeclaration/flow/com.ayvytr.flow/index.html
 $dokka.location:com.ayvytr.flow/BaseActivity///PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/index.html
 $dokka.location:com.ayvytr.flow/BaseActivity/BaseActivity/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/-base-activity.html
@@ -55,6 +51,5 @@ com.ayvytr.flow
 com.ayvytr.flow.base
 com.ayvytr.flow.exception
 com.ayvytr.flow.internal
-com.ayvytr.flow.observer
 com.ayvytr.flow.vm
 
