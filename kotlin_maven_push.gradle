@@ -2,13 +2,13 @@ apply plugin: "com.vanniktech.maven.publish"
 apply plugin: 'org.jetbrains.dokka'
 apply plugin: "com.vanniktech.maven.publish.base"
 
-//allprojects {
-//    plugins.withId("com.vanniktech.maven.publish") {
-//        mavenPublish {
-//            sonatypeHost = "S01"
-//        }
-//    }
-//}
+allprojects {
+    plugins.withId("com.vanniktech.maven.publish") {
+        mavenPublish {
+            sonatypeHost = "S01"
+        }
+    }
+}
 
 def dokkaOutputDir = "$buildDir/javadoc"
 
