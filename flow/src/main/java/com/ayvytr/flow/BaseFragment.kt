@@ -62,7 +62,7 @@ abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
 
     open fun initViewModel() {
         viewModel = ViewModelProvider(this)[getViewModelClass()]
-        viewModel.view = this
+        viewModel.setIView(this)
     }
 
 

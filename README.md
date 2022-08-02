@@ -5,7 +5,7 @@
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.2'
+implementation 'io.github.ayvytr:flow:0.0.3'
 ```
 
 
@@ -15,6 +15,10 @@ implementation 'io.github.ayvytr:flow:0.0.2'
 
 
 ## ChangeLog
+
+### 0.0.3
+
+* 修改BaseViewModel.view 为protected
 
 ### 0.0.2
 

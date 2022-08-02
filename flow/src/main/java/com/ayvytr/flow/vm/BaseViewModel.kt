@@ -11,6 +11,7 @@ import java.util.*
 /**
  * [BaseViewModel].
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.0.3 修改[view]为protect
  * @since 0.0.2
  * 变更职能：增加[BaseViewModel]泛型[IView]，支持BaseActivity, BaseFragment重写：
  *                  1.方便接口回调写在BaseViewModel中，Activity,Fragment只做需要的ui回调
@@ -21,11 +22,16 @@ import java.util.*
  * @since 0.0.1 增加[launchFlow]等基础功能
  */
 open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScope() {
-    lateinit var view: @UnsafeVariance V
+
+    protected lateinit var view: @UnsafeVariance V
 
     //job管理
     protected val jobList by lazy {
         Vector<Triple<String, Boolean, Job>>()
+    }
+
+    fun setIView(v: @UnsafeVariance V) {
+        view = v
     }
 
     override fun onCleared() {

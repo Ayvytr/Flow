@@ -46,7 +46,7 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
      */
     open fun initViewModel() {
         viewModel = ViewModelProvider(this)[getViewModelClass()]
-        viewModel.view = this
+        viewModel.setIView(this)
     }
 
     /**
