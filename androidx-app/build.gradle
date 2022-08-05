@@ -69,6 +69,11 @@ dependencies {
 //        implementation deps.base_coroutine_activity_androidx
 //    } else {
         implementation project(path: ':flow')
+    implementation project(path: ':flow-list')
 //    }
 
+    implementation  'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    implementation  'io.github.scwang90:refresh-header-classics:2.0.5'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }

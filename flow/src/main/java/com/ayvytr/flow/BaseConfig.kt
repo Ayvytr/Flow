@@ -42,4 +42,11 @@ object BaseConfig {
     var onShowMessage: (Context, CharSequence, View) -> Unit = { context, message, _ ->
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
+
+    /**
+     * 全局 page size
+     */
+    @JvmField
+    var PAGE_SIZE: Int = 10
+
 }

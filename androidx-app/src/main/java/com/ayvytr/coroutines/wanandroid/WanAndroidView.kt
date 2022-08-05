@@ -8,4 +8,5 @@ import com.ayvytr.flow.base.IView
  */
 interface WanAndroidView: IView {
     fun showWanAndroidHome(wanAndroidHome: WanAndroidHome)
+    fun onWanAndroidHomeFailed()
 }

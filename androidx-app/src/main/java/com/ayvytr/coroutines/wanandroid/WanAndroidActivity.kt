@@ -27,4 +27,7 @@ class WanAndroidActivity: BaseActivity<WanAndroidViewModel>(), WanAndroidView {
     override fun showWanAndroidHome(wanAndroidHome: WanAndroidHome) {
         tv_value.text = wanAndroidHome.toString()
     }
+
+    override fun onWanAndroidHomeFailed() {
+    }
 }

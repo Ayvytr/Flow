@@ -1,2 +1,3 @@
 include ':flow'
 include ':androidx-app'
+include ':flow-list'

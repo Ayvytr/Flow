@@ -5,7 +5,9 @@
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.3'
+implementation 'io.github.ayvytr:flow:0.0.4'
+
+implementation 'io.github.ayvytr:flow-list:0.0.4'
 ```
 
 
@@ -15,6 +17,11 @@ implementation 'io.github.ayvytr:flow:0.0.3'
 
 
 ## ChangeLog
+
+### 0.0.4
+
+* 增加**BaseConfig.PAGE_SIZE**为全局单页条目数
+* 增加**base-list**模块，**BaseListActivity**，**BaseListFragment**方便下拉刷新和上拉加载
 
 ### 0.0.3
 
@@ -176,6 +183,79 @@ class App: Application() {
         BaseConfig.onShowMessage = {context, message, rootView ->
             Snackbar.make(rootView, message, Snackbar.LENGTH_LONG).show()
         }
+    }
+}
+```
+
+
+
+### flow-list使用参考
+
+```kotlin
+class WanAndroidAdapter(context: Context):
+    EmptyAdapter<WanAndroidData>(context, R.layout.item_wanandroid, R.layout.layout_empty) {
+    override fun onBindView(
+        holder: ViewHolder,
+        t: WanAndroidData,
+        position: Int,
+        payloads: List<Any>
+    ) {
+        holder.setText(R.id.tv_title, t.title)
+        holder.setText(R.id.tv_content, t.niceDate)
+    }
+
+    override fun onBindEmptyView(holder: ViewHolder) {
+    }
+}
+
+class WanAndroidListActivity: BaseListActivity<WanAndroidViewModel, WanAndroidData>(),
+    WanAndroidView {
+    val wanAndroidAdapter = WanAndroidAdapter(getContext())
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_list)
+    }
+
+
+    override fun initData(savedInstanceState: Bundle?) {
+        super.initData(savedInstanceState)
+        FIRST_PAGE = 0
+
+        setAdapter(wanAndroidAdapter)
+        recyclerView.addItemDecoration(DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL))
+        wanAndroidAdapter.onItemClickListener = object: MultiItemTypeAdapter.OnItemClickListener<WanAndroidData>{
+            override fun onItemClick(
+                holder: RecyclerView.ViewHolder,
+                t: WanAndroidData,
+                position: Int
+            ) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(t.link)))
+            }
+        }
+
+
+        autoRefresh()
+    }
+
+    override fun onRefreshCallback(refreshLayout: RefreshLayout) {
+        viewModel.getWanAndroidHome(FIRST_PAGE)
+    }
+
+    override fun onLoadMoreCallback(refreshLayout: RefreshLayout) {
+        viewModel.getWanAndroidHome(currentPage + 1)
+    }
+
+    override fun showWanAndroidHome(wanAndroidHome: WanAndroidHome) {
+        updateData(
+            wanAndroidHome.data.datas,
+            wanAndroidHome.data.curPage,
+            wanAndroidHome.data.pageCount
+        )
+    }
+
+    override fun onWanAndroidHomeFailed() {
+        finishRefresh()
     }
 }
 ```

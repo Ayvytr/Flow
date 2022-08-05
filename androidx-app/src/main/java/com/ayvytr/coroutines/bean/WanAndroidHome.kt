@@ -4,14 +4,14 @@ package com.ayvytr.coroutines.bean
  * @author Administrator
  */
 data class WanAndroidHome(
-    val `data`: Data,
+    val `data`: WanAndroidPage,
     val errorCode: Int,
     val errorMsg: String
 )
 
-data class Data(
+data class WanAndroidPage(
     val curPage: Int,
-    val datas: List<DataX>,
+    val datas: List<WanAndroidData>,
     val offset: Int,
     val over: Boolean,
     val pageCount: Int,
@@ -19,7 +19,7 @@ data class Data(
     val total: Int
 )
 
-data class DataX(
+data class WanAndroidData(
     val apkLink: String,
     val audit: Int,
     val author: String,

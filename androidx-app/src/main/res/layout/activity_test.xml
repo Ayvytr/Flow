@@ -19,4 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_50dp" />
+
+    <Button
+        android:id="@+id/btn_goto_wan_android_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="打开WanAndroidListActivity" />
 </LinearLayout>

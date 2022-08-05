@@ -29,11 +29,14 @@ class WanAndroidViewModel: BaseViewModel<WanAndroidView>() {
 //        )
 //    }
 
-    fun getWanAndroidHome() {
+    fun getWanAndroidHome(page: Int = 0) {
         launchFlow(
-            { wanAndroidApi.getHomeArticle() },
+            { wanAndroidApi.getHomeArticle(page) },
             { view.showWanAndroidHome(it) },
-            { view.showMessage(it.stringId) }
+            {
+                view.showMessage(it.stringId)
+                view.onWanAndroidHomeFailed()
+            }
         )
     }
 }
