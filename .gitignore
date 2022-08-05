@@ -72,4 +72,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-/flow/secret.gpg
+*.gpg

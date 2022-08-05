@@ -29,12 +29,22 @@ jobs:
           arguments: dokkaHtml
 
       # 部署到 GitHub Pages
-      - name: Deploy
+      - name: Deploy flow
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: ayvytr/ayvytr.github.io
-          BRANCH: master
+          BRANCH: main
           FOLDER: ./flow/build/javadoc
           CLEAN: false
           TARGET_FOLDER: javadocs/flow
+
+      - name: Deploy flow-list
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: ayvytr/ayvytr.github.io
+          BRANCH: main
+          FOLDER: ./flow-list/build/javadoc
+          CLEAN: false
+          TARGET_FOLDER: javadocs/flow-list
