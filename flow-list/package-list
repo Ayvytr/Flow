@@ -1,0 +1,16 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.ayvytr.flowlist////PointingToDeclaration/flow-list/com.ayvytr.flowlist/index.html
+$dokka.location:com.ayvytr.flowlist/BaseListActivity///PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-activity/index.html
+$dokka.location:com.ayvytr.flowlist/BaseListActivity/BaseListActivity/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-activity/-base-list-activity.html
+$dokka.location:com.ayvytr.flowlist/BaseListActivity/initView/#android.os.Bundle?/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-activity/init-view.html
+$dokka.location:com.ayvytr.flowlist/BaseListActivity/recyclerView/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-activity/recycler-view.html
+$dokka.location:com.ayvytr.flowlist/BaseListActivity/smartRefreshLayout/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-activity/smart-refresh-layout.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment///PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/index.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment/BaseListFragment/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/-base-list-fragment.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment/initView/#android.os.Bundle?/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/init-view.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment/onDestroyView/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/on-destroy-view.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment/recyclerView/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/recycler-view.html
+$dokka.location:com.ayvytr.flowlist/BaseListFragment/smartRefreshLayout/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/smart-refresh-layout.html
+com.ayvytr.flowlist
+
