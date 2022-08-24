@@ -31,6 +31,7 @@ $dokka.location:com.ayvytr.flow/BaseActivity/showLoading/#kotlin.Boolean/Pointin
 $dokka.location:com.ayvytr.flow/BaseActivity/showMessage/#kotlin.CharSequence/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/show-message.html
 $dokka.location:com.ayvytr.flow/BaseActivity/showMessage/#kotlin.Int/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/show-message.html
 $dokka.location:com.ayvytr.flow/BaseConfig///PointingToDeclaration/flow/com.ayvytr.flow/-base-config/index.html
+$dokka.location:com.ayvytr.flow/BaseConfig/PAGE_SIZE/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-config/-p-a-g-e_-s-i-z-e.html
 $dokka.location:com.ayvytr.flow/BaseConfig/networkExceptionConverter/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-config/network-exception-converter.html
 $dokka.location:com.ayvytr.flow/BaseConfig/networkRetryCount/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-config/network-retry-count.html
 $dokka.location:com.ayvytr.flow/BaseConfig/onShowLoading/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-config/on-show-loading.html
