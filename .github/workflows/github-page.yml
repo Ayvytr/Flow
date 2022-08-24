@@ -34,7 +34,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: ayvytr/ayvytr.github.io
-          BRANCH: main
+          BRANCH: master
           FOLDER: ./flow/build/javadoc
           CLEAN: false
           TARGET_FOLDER: javadocs/flow
@@ -44,7 +44,7 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: ayvytr/ayvytr.github.io
-          BRANCH: main
+          BRANCH: master
           FOLDER: ./flow-list/build/javadoc
           CLEAN: false
           TARGET_FOLDER: javadocs/flow-list
