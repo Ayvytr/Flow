@@ -5,9 +5,9 @@
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.4'
+implementation 'io.github.ayvytr:flow:0.0.5'
 
-implementation 'io.github.ayvytr:flow-list:0.0.4'
+implementation 'io.github.ayvytr:flow-list:0.0.5'
 ```
 
 
@@ -17,6 +17,10 @@ implementation 'io.github.ayvytr:flow-list:0.0.4'
 
 
 ## ChangeLog
+
+### 0.0.5
+
+* 修改gradle-maven-publish-plugin:0.20.0上传的包不是release的问题
 
 ### 0.0.4
 
