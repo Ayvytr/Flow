@@ -44,6 +44,7 @@ $dokka.location:com.ayvytr.flow/BaseFragment/initView/#android.os.Bundle?/Pointi
 $dokka.location:com.ayvytr.flow/BaseFragment/initViewModel/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/init-view-model.html
 $dokka.location:com.ayvytr.flow/BaseFragment/onCreate/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/on-create.html
 $dokka.location:com.ayvytr.flow/BaseFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/on-create-view.html
+$dokka.location:com.ayvytr.flow/BaseFragment/onResume/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/on-resume.html
 $dokka.location:com.ayvytr.flow/BaseFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/on-view-created.html
 $dokka.location:com.ayvytr.flow/BaseFragment/showLoading/#kotlin.Boolean/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/show-loading.html
 $dokka.location:com.ayvytr.flow/BaseFragment/showMessage/#kotlin.CharSequence/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/show-message.html
