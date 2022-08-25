@@ -2,12 +2,19 @@
 
 
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.ayvytr/flow-list.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.ayvytr%22%20AND%20a:%22flow-list%22)
+
+
+
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.5'
+implementation 'io.github.ayvytr:flow:0.0.6'
 
-implementation 'io.github.ayvytr:flow-list:0.0.5'
+
+//可选：支持下拉刷新和上拉加载的BaseListActivity, BaseListFragment
+
+implementation 'io.github.ayvytr:flow-list:0.0.6'
 ```
 
 
@@ -17,6 +24,10 @@ implementation 'io.github.ayvytr:flow-list:0.0.5'
 
 
 ## ChangeLog
+
+### 0.0.6
+
+* BaseFragment增加懒加载功能
 
 ### 0.0.5
 
@@ -264,3 +275,26 @@ class WanAndroidListActivity: BaseListActivity<WanAndroidViewModel, WanAndroidDa
 }
 ```
 
+
+
+### 懒加载Fragment
+
+```kotlin
+/**
+ * 是否开启懒加载，懒加载开启时，只改变了[initData]初始化时机. 改为在[onResume]时初始化.
+ *    
+ * 是否开启懒加载. 注意：在ViewPager中使用时，必须调用FragmentPagerAdapters(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+ * 指明只在onResume时调用initData()数据加载.
+ *
+ * 注意：[onResume]中调用[initData]时，savedInstanceState=null
+*/
+class LazyFragment2: BaseFragment<WanAndroidViewModel>(), WanAndroidView {
+    override fun getContentViewRes(): Int {
+        return R.layout.fragment_lazy
+    }
+
+    override fun isLazyLoadEnabled(): Boolean {
+        return true
+    }
+}
+```

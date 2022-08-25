@@ -16,11 +16,22 @@ import com.ayvytr.flow.vm.BaseViewModel
 /**
  * [BaseFragment].
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.0.6 增加懒加载功能
  * @since 0.0.1
  */
 abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
 
     protected lateinit var viewModel: T
+
+    /**
+     * 是否开启懒加载，懒加载开启时，只改变了[initData]初始化时机. 改为在[onResume]时初始化.
+     *
+     * 注意：在ViewPager中使用时，必须调用FragmentPagerAdapters(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+     * 指明只在onResume时调用initData()数据加载.
+     *
+     * 注意：[onResume]中调用[initData]时，savedInstanceState=null
+     */
+    protected var isLazyLoaded = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +57,20 @@ abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView(savedInstanceState)
-        initData(savedInstanceState)
+        if (!isLazyLoadEnabled()) {
+            initData(savedInstanceState)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //增加了Fragment是否可见的判断
+        if (isLazyLoadEnabled()) {
+            if (!isLazyLoaded && !isHidden) {
+                initData(null)
+                isLazyLoaded = true
+            }
+        }
     }
 
     /**
@@ -85,5 +109,15 @@ abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
         BaseConfig.onShowMessage(requireContext(), message, requireView())
     }
 
+    /**
+     * 是否开启懒加载.
+     *
+     * 注意：在ViewPager中使用时，必须调用FragmentPagerAdapters(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
+     * 指明只在onResume时调用initData()数据加载
+     * @since 0.0.6
+     */
+    protected open fun isLazyLoadEnabled(): Boolean {
+        return false
+    }
 }
 

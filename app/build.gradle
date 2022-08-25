@@ -68,7 +68,7 @@ dependencies {
 //    if (enableJcenter) {
 //        implementation deps.base_coroutine_activity_androidx
 //    } else {
-        implementation project(path: ':flow')
+    implementation project(path: ':flow')
     implementation project(path: ':flow-list')
 //    }
 

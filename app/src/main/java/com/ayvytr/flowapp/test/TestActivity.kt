@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ayvytr.flowapp.R
+import com.ayvytr.flowapp.lazy.LazyLoadActivity
 import com.ayvytr.flowapp.wanandroid.WanAndroidActivity
 import com.ayvytr.flowapp.wanandroid.WanAndroidListActivity
 import com.ayvytr.ktx.ui.getContext
@@ -24,6 +25,10 @@ class TestActivity: AppCompatActivity() {
         }
         btn_goto_wan_android_list.onClick {
             startActivity(Intent(getContext(), WanAndroidListActivity::class.java))
+        }
+
+        btn_lazy.onClick {
+            startActivity(Intent(getContext(), LazyLoadActivity::class.java))
         }
 
         L.e(this.javaClass.genericSuperclass)

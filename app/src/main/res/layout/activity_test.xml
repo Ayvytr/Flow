@@ -26,4 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10dp"
         android:text="打开WanAndroidListActivity" />
+
+    <Button
+        android:id="@+id/btn_lazy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="打开LazyLoadActivity" />
 </LinearLayout>

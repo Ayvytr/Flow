@@ -1,9 +1,9 @@
 package com.ayvytr.flowapp.wanandroid
 
 import android.os.Bundle
-import com.ayvytr.flowapp.bean.WanAndroidHome
 import com.ayvytr.flow.BaseActivity
 import com.ayvytr.flowapp.R
+import com.ayvytr.flowapp.bean.WanAndroidHome
 import kotlinx.android.synthetic.main.activity_wan_android.*
 
 class WanAndroidActivity: BaseActivity<WanAndroidViewModel>(), WanAndroidView {
