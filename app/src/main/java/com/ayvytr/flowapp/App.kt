@@ -25,6 +25,7 @@ class App: Application() {
     override fun onCreate() {
         super.onCreate()
         //初始化，默认开启了OKhttp缓存，cache=null关闭
+        ApiClient.logInterceptor.showLog = true
         ApiClient.init("https://gank.io/api/")
         L.settings().showLog(BuildConfig.DEBUG)
         //覆盖重写自定义全局网络异常转为ResponseMessage
@@ -38,6 +39,7 @@ class App: Application() {
 
     private fun initBaseConfig() {
         BaseConfig.networkExceptionConverter = { e ->
+            L.e(e)
             var exception = NetworkException(e)
             val networkAvailable = isNetworkAvailable()
             when (e) {
@@ -65,7 +67,7 @@ class App: Application() {
                     }
                 }
                 else                      -> {
-                    NetworkException(e, R.string.other_error)
+                    NetworkException(e)
                 }
             }
 

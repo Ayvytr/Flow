@@ -11,6 +11,10 @@ import java.util.*
 /**
  * [BaseViewModel].
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.0.7
+ * 增加[performShowMessage]，解决[launchFlow], [zipFlow] onError默认实现 view.showMessage(it.stringId)
+ * 不适用网络请求错误的问题
+ *
  * @since 0.0.3 修改[view]为protect
  * @since 0.0.2
  * 变更职能：增加[BaseViewModel]泛型[IView]，支持BaseActivity, BaseFragment重写：
@@ -61,7 +65,7 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
     fun <T> launchFlow(
         request: suspend () -> T,
         onSuccess: (T) -> Unit,
-        onError: ((NetworkException) -> Unit) = { view.showMessage(it.stringId) },
+        onError: (NetworkException) -> Unit = { performShowMessage(it) },
         showLoading: Boolean = true,
         retry: Boolean = false,
         repeatSameJob: Boolean = false,
@@ -112,6 +116,17 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
         }
     }
 
+    /**
+     * 统一显示错误，网络请求返回的是字符串，本地的可以是string res.
+     */
+    protected open fun performShowMessage(it: NetworkException) {
+        if (it.isValidStringId()) {
+            view.showMessage(it.stringId)
+        } else {
+            view.showMessage(it.message.toString())
+        }
+    }
+
 
     /**
      * 通过[transform],合并[request1]请求的[T]和[request2]请求的[R]，[onSuccess]返回[OUT]
@@ -123,7 +138,7 @@ open class BaseViewModel<out V: IView> : ViewModel(), CoroutineScope by MainScop
         request2: suspend () -> R,
         transform: (T, R) -> OUT,
         onSuccess: (OUT) -> Unit,
-        onError: ((NetworkException) -> Unit) = { view.showMessage(it.stringId) },
+        onError: (NetworkException) -> Unit = { performShowMessage(it) },
         showLoading: Boolean = true,
         retry: Boolean = false,
         repeatSameJob: Boolean = false,

@@ -2,6 +2,7 @@ package com.ayvytr.flowapp.wanandroid
 
 import android.os.Bundle
 import com.ayvytr.flow.BaseActivity
+import com.ayvytr.flow.exception.NetworkException
 import com.ayvytr.flowapp.R
 import com.ayvytr.flowapp.bean.WanAndroidHome
 import kotlinx.android.synthetic.main.activity_wan_android.*
@@ -28,6 +29,7 @@ class WanAndroidActivity: BaseActivity<WanAndroidViewModel>(), WanAndroidView {
         tv_value.text = wanAndroidHome.toString()
     }
 
-    override fun onWanAndroidHomeFailed() {
+    override fun onWanAndroidHomeFailed(networkException: NetworkException) {
+        tv_value.text = networkException.toString()
     }
 }

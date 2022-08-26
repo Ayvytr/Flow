@@ -1,20 +1,20 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.ayvytr/flow.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.ayvytr%22%20AND%20a:%22flow%22)
+flow [![Maven Central](https://img.shields.io/maven-central/v/io.github.ayvytr/flow.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.ayvytr%22%20AND%20a:%22flow%22)
 
 
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.ayvytr/flow-list.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.ayvytr%22%20AND%20a:%22flow-list%22)
+flow-list [![Maven Central](https://img.shields.io/maven-central/v/io.github.ayvytr/flow-list.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.ayvytr%22%20AND%20a:%22flow-list%22)
 
 
 
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.6'
+implementation 'io.github.ayvytr:flow:0.0.7'
 
 
 //可选：支持下拉刷新和上拉加载的BaseListActivity, BaseListFragment
 
-implementation 'io.github.ayvytr:flow-list:0.0.6'
+implementation 'io.github.ayvytr:flow-list:0.0.7'
 ```
 
 
@@ -24,6 +24,11 @@ implementation 'io.github.ayvytr:flow-list:0.0.6'
 
 
 ## ChangeLog
+
+### 0.0.7
+
+* 修改配置排除aar中的BuildConfig.class
+* 增加BaseViewModel.performShowMessage()，解决launchFlow(), zipFlow()的参数**onError**默认实现**view.showMessage(it.stringId)**不适用网络请求错误的问题
 
 ### 0.0.6
 

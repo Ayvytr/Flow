@@ -2,6 +2,7 @@ package com.ayvytr.flowapp.lazy
 
 import android.os.Bundle
 import com.ayvytr.flow.BaseFragment
+import com.ayvytr.flow.exception.NetworkException
 import com.ayvytr.flowapp.R
 import com.ayvytr.flowapp.bean.WanAndroidHome
 import com.ayvytr.flowapp.wanandroid.WanAndroidView
@@ -32,7 +33,7 @@ class LazyFragment2: BaseFragment<WanAndroidViewModel>(), WanAndroidView {
         tv.text = wanAndroidHome.toString()
     }
 
-    override fun onWanAndroidHomeFailed() {
+    override fun onWanAndroidHomeFailed(networkException: NetworkException) {
         tv.text = "加载失败"
     }
 

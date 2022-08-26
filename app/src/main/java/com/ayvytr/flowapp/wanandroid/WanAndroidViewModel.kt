@@ -34,8 +34,8 @@ class WanAndroidViewModel: BaseViewModel<WanAndroidView>() {
             { wanAndroidApi.getHomeArticle(page) },
             { view.showWanAndroidHome(it) },
             {
-                view.showMessage(it.stringId)
-                view.onWanAndroidHomeFailed()
+                performShowMessage(it)
+                view.onWanAndroidHomeFailed(it)
             }
         )
     }

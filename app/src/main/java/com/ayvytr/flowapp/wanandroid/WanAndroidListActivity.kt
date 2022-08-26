@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.ayvytr.baseadapter.MultiItemTypeAdapter
+import com.ayvytr.flow.exception.NetworkException
 import com.ayvytr.flowapp.R
 import com.ayvytr.flowapp.bean.WanAndroidData
 import com.ayvytr.flowapp.bean.WanAndroidHome
@@ -62,7 +63,7 @@ class WanAndroidListActivity: BaseListActivity<WanAndroidViewModel, WanAndroidDa
         )
     }
 
-    override fun onWanAndroidHomeFailed() {
+    override fun onWanAndroidHomeFailed(networkException: NetworkException) {
         finishRefresh()
     }
 }
