@@ -9,12 +9,12 @@ flow-list [![Maven Central](https://img.shields.io/maven-central/v/io.github.ayv
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.7'
+implementation 'io.github.ayvytr:flow:0.0.8'
 
 
 //可选：支持下拉刷新和上拉加载的BaseListActivity, BaseListFragment
 
-implementation 'io.github.ayvytr:flow-list:0.0.7'
+implementation 'io.github.ayvytr:flow-list:0.0.8'
 ```
 
 
@@ -24,6 +24,10 @@ implementation 'io.github.ayvytr:flow-list:0.0.7'
 
 
 ## ChangeLog
+
+### 0.0.8
+
+* 修改BaseListActivity, BaseListFragment, adapter改名emptyAdapter，并改为protected
 
 ### 0.0.7
 

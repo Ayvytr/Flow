@@ -28,6 +28,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
  * @see BaseViewModel
  *
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.0.8 adapter改名[emptyAdapter]，并改为protected
  * @since 0.0.4
  */
 abstract class BaseListActivity<T: BaseViewModel<IView>, B>: BaseActivity<T>() {
@@ -43,7 +44,7 @@ abstract class BaseListActivity<T: BaseViewModel<IView>, B>: BaseActivity<T>() {
     //每页条目数
     protected var pageSize = BaseConfig.PAGE_SIZE
 
-    private lateinit var adapter: EmptyAdapter<B>
+    protected lateinit var emptyAdapter: EmptyAdapter<B>
 
     override fun initView(savedInstanceState: Bundle?) {
         recyclerView = findViewById(R.id.recycler_view)
@@ -86,8 +87,8 @@ abstract class BaseListActivity<T: BaseViewModel<IView>, B>: BaseActivity<T>() {
     }
 
     protected fun setAdapter(adapter: EmptyAdapter<B>) {
-        this.adapter = adapter
-        recyclerView.adapter = this.adapter
+        this.emptyAdapter = adapter
+        recyclerView.adapter = this.emptyAdapter
     }
 
     /**
@@ -107,9 +108,9 @@ abstract class BaseListActivity<T: BaseViewModel<IView>, B>: BaseActivity<T>() {
             l = emptyList<B>()
         }
         if (currentPage == FIRST_PAGE) {
-            adapter.updateList(l)
+            emptyAdapter.updateList(l)
         } else {
-            adapter.add(l)
+            emptyAdapter.add(l)
         }
         finishRefreshAndLoadMore()
         enableLoadMore(haveMoreData)
@@ -121,7 +122,7 @@ abstract class BaseListActivity<T: BaseViewModel<IView>, B>: BaseActivity<T>() {
     @SuppressLint("NotifyDataSetChanged")
     protected fun updateDataFailed() {
         if (currentPage == FIRST_PAGE) {
-            adapter.notifyDataSetChanged()
+            emptyAdapter.notifyDataSetChanged()
             enableLoadMore(false)
         } else {
             enableLoadMore(true)
