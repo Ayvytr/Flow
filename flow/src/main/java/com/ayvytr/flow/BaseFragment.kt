@@ -101,6 +101,13 @@ abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
         BaseConfig.onShowLoading(requireContext(), isShow)
     }
 
+    /**
+     * @see showLoading
+     */
+    override fun hideLoading() {
+        showLoading(false)
+    }
+
     override fun showMessage(@StringRes strId: Int) {
         showMessage(getString(strId))
     }

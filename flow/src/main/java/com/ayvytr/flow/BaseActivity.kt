@@ -84,6 +84,13 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
         BaseConfig.onShowLoading(this, isShow)
     }
 
+    /**
+     * @see showLoading
+     */
+    override fun hideLoading() {
+        showLoading(false)
+    }
+
     override fun showMessage(@StringRes strId: Int) {
         showMessage(getString(strId))
     }
