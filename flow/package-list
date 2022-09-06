@@ -2,6 +2,7 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.ayvytr.flow.base////PointingToDeclaration/flow/com.ayvytr.flow.base/index.html
 $dokka.location:com.ayvytr.flow.base/IView///PointingToDeclaration/flow/com.ayvytr.flow.base/-i-view/index.html
+$dokka.location:com.ayvytr.flow.base/IView/hideLoading/#/PointingToDeclaration/flow/com.ayvytr.flow.base/-i-view/hide-loading.html
 $dokka.location:com.ayvytr.flow.base/IView/initData/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow.base/-i-view/init-data.html
 $dokka.location:com.ayvytr.flow.base/IView/initView/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow.base/-i-view/init-view.html
 $dokka.location:com.ayvytr.flow.base/IView/showLoading/#kotlin.Boolean/PointingToDeclaration/flow/com.ayvytr.flow.base/-i-view/show-loading.html
@@ -24,6 +25,7 @@ $dokka.location:com.ayvytr.flow.vm/BaseViewModel/zipFlow/#kotlin.coroutines.Susp
 $dokka.location:com.ayvytr.flow////PointingToDeclaration/flow/com.ayvytr.flow/index.html
 $dokka.location:com.ayvytr.flow/BaseActivity///PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/index.html
 $dokka.location:com.ayvytr.flow/BaseActivity/BaseActivity/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/-base-activity.html
+$dokka.location:com.ayvytr.flow/BaseActivity/hideLoading/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/hide-loading.html
 $dokka.location:com.ayvytr.flow/BaseActivity/initData/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/init-data.html
 $dokka.location:com.ayvytr.flow/BaseActivity/initView/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/init-view.html
 $dokka.location:com.ayvytr.flow/BaseActivity/initViewModel/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-activity/init-view-model.html
@@ -39,6 +41,7 @@ $dokka.location:com.ayvytr.flow/BaseConfig/onShowMessage/#/PointingToDeclaration
 $dokka.location:com.ayvytr.flow/BaseFragment///PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/index.html
 $dokka.location:com.ayvytr.flow/BaseFragment/BaseFragment/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/-base-fragment.html
 $dokka.location:com.ayvytr.flow/BaseFragment/getContentViewRes/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/get-content-view-res.html
+$dokka.location:com.ayvytr.flow/BaseFragment/hideLoading/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/hide-loading.html
 $dokka.location:com.ayvytr.flow/BaseFragment/initData/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/init-data.html
 $dokka.location:com.ayvytr.flow/BaseFragment/initView/#android.os.Bundle?/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/init-view.html
 $dokka.location:com.ayvytr.flow/BaseFragment/initViewModel/#/PointingToDeclaration/flow/com.ayvytr.flow/-base-fragment/init-view-model.html
