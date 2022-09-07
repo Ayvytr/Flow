@@ -9,12 +9,12 @@ flow-list [![Maven Central](https://img.shields.io/maven-central/v/io.github.ayv
 ## Import
 
 ``` groovy
-implementation 'io.github.ayvytr:flow:0.0.9'
+implementation 'io.github.ayvytr:flow:0.1.0'
 
 
 //可选：支持下拉刷新和上拉加载的BaseListActivity, BaseListFragment
 
-implementation 'io.github.ayvytr:flow-list:0.0.9'
+implementation 'io.github.ayvytr:flow-list:0.1.0'
 ```
 
 
@@ -24,6 +24,10 @@ implementation 'io.github.ayvytr:flow-list:0.0.9'
 
 
 ## ChangeLog
+
+### 0.1.0
+
+* 修改**initViewModel()**，保证**viewModel**初始化成功（解决泛型信息缺失导致的getVmClass()异常问题）
 
 ### 0.0.9
 
