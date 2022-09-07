@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ayvytr.flowapp.R
 import com.ayvytr.flowapp.lazy.LazyLoadActivity
+import com.ayvytr.flowapp.basevm.ViewPagerActivity
 import com.ayvytr.flowapp.wanandroid.WanAndroidActivity
 import com.ayvytr.flowapp.wanandroid.WanAndroidListActivity
 import com.ayvytr.ktx.ui.getContext
@@ -29,6 +30,10 @@ class TestActivity: AppCompatActivity() {
 
         btn_lazy.onClick {
             startActivity(Intent(getContext(), LazyLoadActivity::class.java))
+        }
+
+        btn_vp.onClick {
+            startActivity(Intent(getContext(), ViewPagerActivity::class.java))
         }
 
         L.e(this.javaClass.genericSuperclass)

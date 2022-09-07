@@ -12,6 +12,7 @@ import com.ayvytr.flow.vm.BaseViewModel
 /**
  * [BaseActivity].
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.1.0 修改[initViewModel]，保证[viewModel]初始化成功（解决泛型信息缺失导致的[getVmClass]异常问题）
  * @since 0.0.1
  */
 open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
@@ -42,21 +43,26 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
     }
 
     /**
-     * 应该尽早用，至少可以在[initData]里写网络请求
+     * 初始化[viewModel]
+     * @since 0.1.0 解决泛型信息缺失导致的[getVmClass]异常问题
      */
     open fun initViewModel() {
-        viewModel = ViewModelProvider(this)[getViewModelClass()]
+        viewModel = try {
+            ViewModelProvider(this)[getViewModelClass()]
+        } catch (e: Exception) {
+            ViewModelProvider(this)[BaseViewModel::class.java] as T
+        }
         viewModel.setIView(this)
     }
 
     /**
      * 如果继承的子类传入的泛型不是[BaseViewModel],需要重写这个方法，提供自定义的[BaseViewModel]子类.
      *
-     * 注意：[getVmClass]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层Fragment后没有获取到
-     * 泛型导致的）：
+     * 注意：[getVmClass]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层后没有获取到
+     * 泛型信息导致的）：
      * ClassCastException: java.lang.Class cannot be cast to java.lang.reflect.ParameterizedType
      */
-    protected open fun getViewModelClass(): Class<T> {
+    private fun getViewModelClass(): Class<T> {
         return getVmClass(this) as Class<T>
     }
 

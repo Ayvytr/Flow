@@ -76,16 +76,23 @@ abstract class BaseFragment<T: BaseViewModel<IView>>: Fragment(), IView {
     /**
      * 如果继承的子类传入的泛型不是[BaseViewModel],需要重写这个方法，提供自定义的[BaseViewModel]子类.
      *
-     * 注意：[getVmClass]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层Fragment后没有获取到
-     * 泛型导致的）：
+     * 注意：[getVmClass]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层后没有获取到
+     * 泛型信息导致的）：
      * ClassCastException: java.lang.Class cannot be cast to java.lang.reflect.ParameterizedType
      */
-    protected open fun getViewModelClass(): Class<T> {
+    private fun getViewModelClass(): Class<T> {
         return getVmClass(this) as Class<T>
     }
 
+    /**
+     * 初始化[viewModel]
+     */
     open fun initViewModel() {
-        viewModel = ViewModelProvider(this)[getViewModelClass()]
+        viewModel = try {
+            ViewModelProvider(this)[getViewModelClass()]
+        } catch (e: Exception) {
+            ViewModelProvider(this)[BaseViewModel::class.java] as T
+        }
         viewModel.setIView(this)
     }
 
