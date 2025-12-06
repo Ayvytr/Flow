@@ -1,9 +1,13 @@
-apply plugin: 'com.android.library'
-apply plugin: 'org.jetbrains.kotlin.android'
-apply from: '../kotlin_maven_push.gradle'
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id "com.vanniktech.maven.publish" version "0.35.0"
+}
 
 android {
     compileSdkVersion 30
+    namespace 'com.ayvytr.flow'
+
 
     defaultConfig {
         minSdkVersion 19
@@ -27,23 +31,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation libs.kotlin.coroutines
+    implementation libs.kotlin.coroutines.android
+    implementation libs.kotlin.stdlib8
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation libs.androidx.appcompat
+    implementation libs.viewmodel
+    implementation libs.viewmodel.ktx
 
 
-//    implementation 'io.github.ayvytr:logger:3.3.4'
-//    implementation 'io.github.ayvytr:network:+'
-
-    dokkaJavadocPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:$dokka_version")
-
+    implementation libs.logger
+    implementation libs.network
 }
 

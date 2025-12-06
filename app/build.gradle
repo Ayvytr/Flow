@@ -1,14 +1,15 @@
-apply plugin: 'com.android.application'
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
 
-apply plugin: 'org.jetbrains.kotlin.android'
-
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
+    namespace 'com.ayvytr.coroutines'
 
     defaultConfig {
-        applicationId "com.ayvytr.flow"
+        applicationId "com.ayvytr.coroutines"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -27,9 +28,6 @@ android {
     }
 
 
-    androidExtensions {
-        experimental = true
-    }
 }
 
 dependencies {
@@ -38,14 +36,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation libs.kotlin.stdlib8
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
 //    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:+'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.4.0'
-
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
@@ -55,7 +51,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:+'
     implementation 'com.google.code.gson:gson:+'
-    implementation 'io.github.ayvytr:logger:3.3.4'
+    implementation 'io.github.ayvytr:Logger:3.3.1'
     implementation 'io.github.ayvytr:okhttploginterceptor:+'
     implementation 'io.github.ayvytr:ktx-androidx:3.0.7'
     implementation 'io.github.ayvytr:base-adapter:0.1.2'
@@ -68,12 +64,7 @@ dependencies {
 //    if (enableJcenter) {
 //        implementation deps.base_coroutine_activity_androidx
 //    } else {
-    implementation project(path: ':flow')
-    implementation project(path: ':flow-list')
+        implementation project(path: ':flow')
 //    }
 
-    implementation  'io.github.scwang90:refresh-layout-kernel:2.0.5'
-    implementation  'io.github.scwang90:refresh-header-classics:2.0.5'
-
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }

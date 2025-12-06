@@ -14,30 +14,8 @@
         android:textSize="@dimen/_20sp" />
 
     <Button
-        android:id="@+id/btn_goto_wan_android"
-        android:text="打开WanAndroidActivity"
+        android:id="@+id/btn_goto_main"
+        android:text="打开MainActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_50dp" />
-
-    <Button
-        android:id="@+id/btn_goto_wan_android_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10dp"
-        android:text="打开WanAndroidListActivity" />
-
-    <Button
-        android:id="@+id/btn_lazy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10dp"
-        android:text="打开LazyLoadActivity" />
-
-    <Button
-        android:id="@+id/btn_vp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10dp"
-        android:text="打开ViewPagerActivity" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

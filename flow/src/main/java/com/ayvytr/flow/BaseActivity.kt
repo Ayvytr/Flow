@@ -1,21 +1,20 @@
 package com.ayvytr.flow
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.ayvytr.flow.base.IView
 import com.ayvytr.flow.internal.BaseLifecycleObserver
-import com.ayvytr.flow.internal.getVmClass
+import com.ayvytr.flow.internal.IView
+import com.ayvytr.flow.internal.getVmClazz
 import com.ayvytr.flow.vm.BaseViewModel
 
 /**
- * [BaseActivity].
+ * BaseActivity.
  * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
- * @since 0.1.0 修改[initViewModel]，保证[viewModel]初始化成功（解决泛型信息缺失导致的[getVmClass]异常问题）
- * @since 0.0.1
  */
-open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
+open class BaseActivity<T: BaseViewModel>: AppCompatActivity(), IView {
 
     /**
      * 写成lateinit，在onCreate初始化的原因：1.传savedInstanceState；2.在继承[BaseActivity]时，可以把
@@ -28,10 +27,6 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initViewModel()
-        initBaseObserver(savedInstanceState)
-    }
-
-    private fun initBaseObserver(savedInstanceState: Bundle?) {
         baseObserver = object:
             BaseLifecycleObserver {
             override fun onCreateEvent() {
@@ -43,27 +38,22 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
     }
 
     /**
-     * 初始化[viewModel]
-     * @since 0.1.0 解决泛型信息缺失导致的[getVmClass]异常问题
+     * 应该尽早用，至少可以在[initData]里写网络请求
      */
     open fun initViewModel() {
-        viewModel = try {
-            ViewModelProvider(this)[getViewModelClass()]
-        } catch (e: Exception) {
-            ViewModelProvider(this)[BaseViewModel::class.java] as T
-        }
-        viewModel.setIView(this)
+        viewModel = ViewModelProvider(this)[getViewModelClass()]
+        viewModel.view = this
     }
 
     /**
      * 如果继承的子类传入的泛型不是[BaseViewModel],需要重写这个方法，提供自定义的[BaseViewModel]子类.
      *
-     * 注意：[getVmClass]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层后没有获取到
-     * 泛型信息导致的）：
+     * 注意：[getVmClazz]报如下错时需要重写这个方法显式指明[T]的类型（这个情况是继承多层Fragment后没有获取到
+     * 泛型导致的）：
      * ClassCastException: java.lang.Class cannot be cast to java.lang.reflect.ParameterizedType
      */
-    private fun getViewModelClass(): Class<T> {
-        return getVmClass(this) as Class<T>
+    protected open fun getViewModelClass(): Class<T> {
+        return getVmClazz(this) as Class<T>
     }
 
     /**
@@ -87,22 +77,14 @@ open class BaseActivity<T: BaseViewModel<IView>>: AppCompatActivity(), IView {
     }
 
     override fun showLoading(isShow: Boolean) {
-        BaseConfig.onShowLoading(this, isShow)
-    }
-
-    /**
-     * @see showLoading
-     */
-    override fun hideLoading() {
-        showLoading(false)
     }
 
     override fun showMessage(@StringRes strId: Int) {
         showMessage(getString(strId))
     }
 
-    override fun showMessage(message: CharSequence) {
-        BaseConfig.onShowMessage(this, message, findViewById(android.R.id.content))
+    override fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 }
