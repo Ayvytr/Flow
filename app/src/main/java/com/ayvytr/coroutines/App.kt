@@ -6,7 +6,6 @@ import com.ayvytr.flow.exception.NetworkException
 import com.ayvytr.ktx.context.isNetworkAvailable
 import com.ayvytr.logger.L
 import com.ayvytr.network.ApiClient
-import com.ayvytr.network.isNetworkAvailable
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -19,8 +18,7 @@ import java.net.UnknownHostException
 class App: Application() {
     override fun onCreate() {
         super.onCreate()
-        //初始化，默认开启了OKhttp缓存，cache=null关闭
-        ApiClient.init("https://gank.io/api/", cache = null)
+        ApiClient.init("https://gank.io/api/")
         L.settings().showLog(BuildConfig.DEBUG)
         //覆盖重写自定义全局网络异常转为ResponseMessage
 //        ApiClient.throwable2ResponseMessage = {

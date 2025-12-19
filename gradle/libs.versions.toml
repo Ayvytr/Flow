@@ -25,7 +25,8 @@ recyclerview = 'androidx.recyclerview:recyclerview:1.2.1'
 
 logger = 'io.github.ayvytr:logger:+'
 flow = 'io.github.ayvytr:flow:+'
-network = 'io.github.ayvytr:network:+'
+network = 'io.github.ayvytr:network:3.0.3'
+okhttploginterceptor = 'io.github.ayvytr:okhttploginterceptor:+'
 
 leakcanary = 'com.squareup.leakcanary:leakcanary-android:+'
 crashreport = 'com.tencent.bugly:crashreport:+'
@@ -35,6 +36,10 @@ ktx-androidx = 'io.github.ayvytr:ktx-androidx:+'
 
 scwang90-refresh-kernel=  'io.github.scwang90:refresh-layout-kernel:2.0.5'
 scwang90-refresh-header-classics = 'io.github.scwang90:refresh-header-classics:2.0.5'
+okhttp = 'com.squareup.okhttp3:okhttp:+'
+retrofit = "com.squareup.retrofit2:retrofit:3.0.0"
+retrofit-gson = 'com.squareup.retrofit2:retrofit:3.0.0'
+gson = 'com.google.code.gson:gson:+'
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

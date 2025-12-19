@@ -11,7 +11,7 @@ import com.ayvytr.network.ApiClient
  * @author EDZ
  */
 class MainViewModel : BaseViewModel() {
-    val api = ApiClient.create(Api::class.java)
+    val api = ApiClient.get(Api::class.java)
 
 
     fun getAndroidPostFlow(

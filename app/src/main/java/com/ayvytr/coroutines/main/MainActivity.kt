@@ -2,16 +2,14 @@ package com.ayvytr.coroutines.main
 
 import android.os.Bundle
 import com.ayvytr.coroutines.R
-import com.ayvytr.coroutines.bean.BaseGank
+import com.ayvytr.coroutines.databinding.ActivityMainBinding
+import com.ayvytr.coroutines.viewBinding
 import com.ayvytr.flow.BaseActivity
-import com.ayvytr.flow.ResponseObserver
-import com.ayvytr.flow.exception.NetworkException
-import com.ayvytr.flow.internal.IView
-import com.ayvytr.ktx.ui.show
 import com.ayvytr.logger.L
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<MainViewModel>() {
+    private val binding by viewBinding<ActivityMainBinding>()
+
 
 
     override fun showLoading(isShow: Boolean) {
@@ -23,25 +21,27 @@ class MainActivity : BaseActivity<MainViewModel>() {
     }
 
     override fun initData(savedInstanceState: Bundle?) {
-        btn_get_data.setOnClickListener {
-            tv_error.text = null
-            //基本测试
+        binding.apply {
+
+            btnGetData.setOnClickListener {
+                tvError.text = null
+                //基本测试
 //            viewModel.getAndroidPostFlow(
 //                false,
 //                {
 //                    tv_value.text = it.toString()
 //                })
 
-            viewModel.getAndroidPostFlow(
-                false,
-                {
-                    tv_value.text = it.toString()
-                }, {
-                    tv_error.text = "未显示toast，错误： \n ${it.message}"
-                })
+                viewModel.getAndroidPostFlow(
+                    false,
+                    {
+                        tvValue.text = it.toString()
+                    }, {
+                        tvError.text = "未显示toast，错误： \n ${it.message}"
+                    })
 
 
-            //重试测试
+                //重试测试
 //            viewModel.getAndroidPostFlow(
 //                true,
 //                {
@@ -49,7 +49,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 //                })
 
 
-            //使用接口测试
+                //使用接口测试
 //            viewModel.getAndroidPostInterface(object: ResponseObserver<BaseGank> {
 //                override fun onSuccess(t: BaseGank) {
 //                    tv_value.text = t.toString()
@@ -61,6 +61,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 //                }
 //            })
 
+            }
         }
     }
 
