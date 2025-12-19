@@ -3,6 +3,7 @@ package com.ayvytr.coroutines
 import android.app.Application
 import com.ayvytr.flow.BaseConfig
 import com.ayvytr.flow.exception.NetworkException
+import com.ayvytr.ktx.context.isNetworkAvailable
 import com.ayvytr.logger.L
 import com.ayvytr.network.ApiClient
 import com.ayvytr.network.isNetworkAvailable

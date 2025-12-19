@@ -27,7 +27,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -51,9 +53,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:+'
     implementation 'com.google.code.gson:gson:+'
-    implementation 'io.github.ayvytr:Logger:3.3.1'
+    implementation 'io.github.ayvytr:logger:+'
     implementation 'io.github.ayvytr:okhttploginterceptor:+'
-    implementation 'io.github.ayvytr:ktx-androidx:3.0.7'
+    implementation 'io.github.ayvytr:ktx-androidx:+'
     implementation 'io.github.ayvytr:base-adapter:0.1.2'
 
 //    implementation 'ru.gildor.coroutines:kotlin-coroutines-retrofit:1.1.0'
