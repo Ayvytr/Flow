@@ -1,109 +1,216 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>BaseConfig</title>
-<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>    <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
-<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><link href="../../../styles/prism.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script><script type="text/javascript" src="../../../scripts/main.js" async="async"></script><script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>  </head>
-  <body>
-    <div class="navigation-wrapper" id="navigation-wrapper">
-      <div id="leftToggler"><span class="icon-toggler"></span></div>
-      <div class="library-name"><a href="../../../index.html">flow</a></div>
-      <div>0.1.0</div>
-      <div class="pull-right d-flex"><button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
-      </div>
-    </div>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
+                    flow
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
+                        data-filter=":flow/main">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":flow/main"
+                                       data-filter=":flow/main"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
     <div id="container">
-      <div id="leftColumn">
-        <div id="sideMenu"></div>
-      </div>
-      <div id="main"><script type="text/javascript" src="../../../scripts/main.js"></script>
-        <div class="main-content" id="content" pageIds="flow::com.ayvytr.flow/BaseConfig///PointingToDeclaration//859358944">
-          <div class="breadcrumbs"><a href="../../../index.html">flow</a>/<a href="../index.html">com.ayvytr.flow</a>/<a href="index.html">BaseConfig</a></div>
-          <div class="cover ">
-            <h1 class="cover"><span>Base</span><wbr></wbr><span><span>Config</span></span></h1>
-            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">BaseConfig</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">全局配置类，便于全局修改网络请求重试次数，网络异常转换，<a href="../-base-activity/index.html">BaseActivity</a>和<a href="../-base-fragment/index.html">BaseFragment</a>显示loading和错误 提示方式.</p><h4 class="">Author</h4><p class="paragraph">Ayvytr <a href="https://github.com/Ayvytr">'s GitHub</a></p><h4 class="">Since</h4><p class="paragraph">0.0.1</p></div></div>
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    flow
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="flow::com.ayvytr.flow/BaseConfig///PointingToDeclaration//-1723209029">
+  <div class="breadcrumbs"><a href="../../../index.html">flow</a><span class="delimiter">/</span><a href="../index.html">com.ayvytr.flow</a><span class="delimiter">/</span><span class="current">BaseConfig</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Base</span><wbr></wbr><span><span>Config</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">BaseConfig</a></div><p class="paragraph">全局配置类，便于全局修改网络请求重试次数，网络异常转换，<a href="../-base-activity/index.html">BaseActivity</a>和<a href="../-base-fragment/index.html">BaseFragment</a>显示loading和错误 提示方式.</p><span class="kdoc-tag"><h4 class="">Author</h4><p class="paragraph">Ayvytr <a href="https://github.com/Ayvytr">'s GitHub</a></p></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">0.0.1</p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="574649793%2FProperties%2F-1723209029" anchor-label="networkExceptionConverter" id="574649793%2FProperties%2F-1723209029" data-filterable-set=":flow/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":flow/main" data-filterable-set=":flow/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="network-exception-converter.html"><span>network</span><wbr></wbr><span>Exception</span><wbr></wbr><span><span>Converter</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="574649793%2FProperties%2F-1723209029"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-field/index.html"><span class="token annotation builtin">JvmField</span></a></div></div><span class="token keyword">var </span><a href="network-exception-converter.html">networkExceptionConverter</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-throwable/index.html">Throwable</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a></div><div class="brief "><p class="paragraph">全局网络异常转换<a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a>，便于自定义错误提示/国际化.</p></div></div></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="tabbedcontent">
-            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Properties">Properties</button></div>
-            <div class="tabs-section-body">
-              <h2 class="">Properties</h2>
-              <div class="table" data-togglable="Properties"><a data-name="574649793%2FProperties%2F859358944" anchor-label="networkExceptionConverter" id="574649793%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="network-exception-converter.html">networkExceptionConverter</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="574649793%2FProperties%2F859358944"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="574649793%2FProperties%2F859358944" anchor-label="networkExceptionConverter" id="574649793%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmField///PointingToDeclaration/"><span class="token annotation">JvmField</span></span></div></div><span class="token keyword"></span><span class="token keyword">var </span><a href="network-exception-converter.html">networkExceptionConverter</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="kotlin/Throwable///PointingToDeclaration/">Throwable</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="574649793%2FProperties%2F859358944" anchor-label="networkExceptionConverter" id="574649793%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><p class="paragraph">全局网络异常转换<a href="../../com.ayvytr.flow.exception/-network-exception/index.html">NetworkException</a>，便于自定义错误提示/国际化.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
+<a data-name="1991540299%2FProperties%2F-1723209029" anchor-label="networkRetryCount" id="1991540299%2FProperties%2F-1723209029" data-filterable-set=":flow/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":flow/main" data-filterable-set=":flow/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="network-retry-count.html"><span>network</span><wbr></wbr><span>Retry</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1991540299%2FProperties%2F-1723209029"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-field/index.html"><span class="token annotation builtin">JvmField</span></a></div></div><span class="token keyword">var </span><a href="network-retry-count.html">networkRetryCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">全局网络请求重试次数</p></div></div></div>
                 </div>
-<a data-name="1991540299%2FProperties%2F859358944" anchor-label="networkRetryCount" id="1991540299%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="network-retry-count.html">networkRetryCount</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1991540299%2FProperties%2F859358944"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="1991540299%2FProperties%2F859358944" anchor-label="networkRetryCount" id="1991540299%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmField///PointingToDeclaration/"><span class="token annotation">JvmField</span></span></div></div><span class="token keyword"></span><span class="token keyword">var </span><a href="network-retry-count.html">networkRetryCount</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator"> = </span><span class="token constant">2</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="1991540299%2FProperties%2F859358944" anchor-label="networkRetryCount" id="1991540299%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><p class="paragraph">全局网络请求重试次数</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-167066080%2FProperties%2F-1723209029" anchor-label="onShowLoading" id="-167066080%2FProperties%2F-1723209029" data-filterable-set=":flow/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":flow/main" data-filterable-set=":flow/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-show-loading.html"><span>on</span><wbr></wbr><span>Show</span><wbr></wbr><span><span>Loading</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-167066080%2FProperties%2F-1723209029"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-field/index.html"><span class="token annotation builtin">JvmField</span></a></div></div><span class="token keyword">var </span><a href="on-show-loading.html">onShowLoading</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></div><div class="brief "><p class="paragraph">全局显示/隐藏loading. 注意：如果显示Dialog，注意内存泄漏问题</p></div></div></div>
                 </div>
-<a data-name="-167066080%2FProperties%2F859358944" anchor-label="onShowLoading" id="-167066080%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="on-show-loading.html">onShowLoading</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-167066080%2FProperties%2F859358944"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="-167066080%2FProperties%2F859358944" anchor-label="onShowLoading" id="-167066080%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmField///PointingToDeclaration/"><span class="token annotation">JvmField</span></span></div></div><span class="token keyword"></span><span class="token keyword">var </span><a href="on-show-loading.html">onShowLoading</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-167066080%2FProperties%2F859358944" anchor-label="onShowLoading" id="-167066080%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><p class="paragraph">全局显示/隐藏loading. 注意：如果显示Dialog，注意内存泄漏问题</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+<a data-name="159601077%2FProperties%2F-1723209029" anchor-label="onShowMessage" id="159601077%2FProperties%2F-1723209029" data-filterable-set=":flow/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":flow/main" data-filterable-set=":flow/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-show-message.html"><span>on</span><wbr></wbr><span>Show</span><wbr></wbr><span><span>Message</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="159601077%2FProperties%2F-1723209029"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-field/index.html"><span class="token annotation builtin">JvmField</span></a></div></div><span class="token keyword">var </span><a href="on-show-message.html">onShowMessage</a><span class="token operator">: </span><span class="token punctuation">(</span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-char-sequence/index.html">CharSequence</a><span class="token punctuation">, </span><a href="https://developer.android.com/reference/kotlin/android/view/View.html">View</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></div><div class="brief "><p class="paragraph">全局错误提示，默认显示<a href="https://developer.android.com/reference/kotlin/android/widget/Toast.html">Toast</a></p></div></div></div>
                 </div>
-<a data-name="159601077%2FProperties%2F859358944" anchor-label="onShowMessage" id="159601077%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="on-show-message.html">onShowMessage</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="159601077%2FProperties%2F859358944"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="159601077%2FProperties%2F859358944" anchor-label="onShowMessage" id="159601077%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmField///PointingToDeclaration/"><span class="token annotation">JvmField</span></span></div></div><span class="token keyword"></span><span class="token keyword">var </span><a href="on-show-message.html">onShowMessage</a><span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="kotlin/CharSequence///PointingToDeclaration/">CharSequence</span><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="android.view/View///PointingToDeclaration/">View</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><span data-unresolved-link="kotlin/Unit///PointingToDeclaration/">Unit</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="159601077%2FProperties%2F859358944" anchor-label="onShowMessage" id="159601077%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><p class="paragraph">全局错误提示，默认显示<span data-unresolved-link="android.widget/Toast///PointingToDeclaration/">Toast</span></p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1794556625%2FProperties%2F859358944" anchor-label="PAGE_SIZE" id="-1794556625%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a>
-                <div class="table-row" data-filterable-current=":flow:dokkaHtml/release" data-filterable-set=":flow:dokkaHtml/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex"><a href="-p-a-g-e_-s-i-z-e.html">PAGE_SIZE</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1794556625%2FProperties%2F859358944"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":flow:dokkaHtml/release"><a data-name="-1794556625%2FProperties%2F859358944" anchor-label="PAGE_SIZE" id="-1794556625%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation">@</span><span data-unresolved-link="kotlin.jvm/JvmField///PointingToDeclaration/"><span class="token annotation">JvmField</span></span></div></div><span class="token keyword"></span><span class="token keyword">var </span><a href="-p-a-g-e_-s-i-z-e.html">PAGE_SIZE</a><span class="token operator">: </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token operator"> = </span><span class="token constant">10</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1794556625%2FProperties%2F859358944" anchor-label="PAGE_SIZE" id="-1794556625%2FProperties%2F859358944" data-filterable-set=":flow:dokkaHtml/release"></a><p class="paragraph">全局 page size</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1794556625%2FProperties%2F-1723209029" anchor-label="PAGE_SIZE" id="-1794556625%2FProperties%2F-1723209029" data-filterable-set=":flow/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":flow/main" data-filterable-set=":flow/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-a-g-e_-s-i-z-e.html"><span>PAGE_</span><wbr></wbr><span>SIZE</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1794556625%2FProperties%2F-1723209029"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":flow/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-jvm-field/index.html"><span class="token annotation builtin">JvmField</span></a></div></div><span class="token keyword">var </span><a href="-p-a-g-e_-s-i-z-e.html">PAGE_SIZE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">全局 page size</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2025 Copyright</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
-
