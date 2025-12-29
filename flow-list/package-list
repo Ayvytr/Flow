@@ -13,4 +13,3 @@ $dokka.location:com.ayvytr.flowlist/BaseListFragment/onDestroyView/#/PointingToD
 $dokka.location:com.ayvytr.flowlist/BaseListFragment/recyclerView/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/recycler-view.html
 $dokka.location:com.ayvytr.flowlist/BaseListFragment/smartRefreshLayout/#/PointingToDeclaration/flow-list/com.ayvytr.flowlist/-base-list-fragment/smart-refresh-layout.html
 com.ayvytr.flowlist
-
