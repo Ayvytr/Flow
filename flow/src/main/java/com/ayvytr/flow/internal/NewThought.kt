@@ -1,7 +1,5 @@
 package com.ayvytr.flow.internal
 
-import android.app.Activity
-import android.os.Parcelable
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

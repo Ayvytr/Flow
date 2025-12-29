@@ -3,11 +3,23 @@ package com.ayvytr.flow.internal
 import java.lang.reflect.ParameterizedType
 
 /**
- * 获取vm clazz
+ * @author Ayvytr ['s GitHub](https://github.com/Ayvytr)
+ * @since 0.0.1
  */
-@Suppress("UNCHECKED_CAST")
-fun <VM> getVmClazz(obj: Any): VM {
-    return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as VM
+
+/**
+ * 获取vm clazz.
+ * getGenericSuperclass() 通过反射获取当前类表示的实体（类，接口，基本类型或void）的直接父类的Type，
+ * getActualTypeArguments()返回参数数组。
+ */
+inline fun <reified VM> getVmClass(obj: Any): VM {
+    val types = (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments
+    types.forEach {
+        if(it is VM) {
+            return it
+        }
+    }
+    throw TypeCastException("Cannot find generic type VM")
 }
 
 internal fun StackTraceElement.toKey(): String {

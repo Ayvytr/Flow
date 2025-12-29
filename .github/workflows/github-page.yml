@@ -10,23 +10,30 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 拉取代码
+      # 1. 拉取代码（包括 Gradle Wrapper）
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - name: Set up the Java JDK
-        uses: actions/setup-java@v3
+      # 2. 设置 Java 环境
+      - name: Set up Java
+        uses: actions/setup-java@v4
         with:
-          java-version: 13
-          distribution: 'adopt'
+          java-version: '17'
+          distribution: 'zulu'
 
-      # 生成javadoc
-      - uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 7.3.3
-          arguments: dokkaHtml
+      # 3. （可选但推荐）设置 Gradle 环境并利用其缓存优化
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4 # 使用新的官方 Action 并省略 gradle-version 参数
+        # 注意这里移除了 with: gradle-version 配置
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      # 4. 使用项目自身的 Gradle Wrapper 生成文档
+      - name: Generate Javadoc with Gradle Wrapper
+        run: ./gradlew dokkaGenerateHtml # 使用 ./gradlew 而不是指定版本的 gradle
 
       # 部署到 GitHub Pages
       - name: Deploy flow
@@ -35,7 +42,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: ayvytr/ayvytr.github.io
           BRANCH: master
-          FOLDER: ./flow/build/javadoc
+          FOLDER: ./flow/build/dokka/html
           CLEAN: false
           TARGET_FOLDER: javadocs/flow
 
@@ -45,6 +52,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REPOSITORY_NAME: ayvytr/ayvytr.github.io
           BRANCH: master
-          FOLDER: ./flow-list/build/javadoc
+          FOLDER: ./flow-list/build/dokka/html
           CLEAN: false
           TARGET_FOLDER: javadocs/flow-list

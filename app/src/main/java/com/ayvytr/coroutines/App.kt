@@ -24,7 +24,7 @@ class App: Application() {
 //        ApiClient.throwable2ResponseMessage = {
 //            ResponseMessage("哈哈", throwable = it)
 //        }
-        BaseConfig.networkStringIdConverter = { e ->
+        BaseConfig.networkExceptionConverter = { e ->
             var exception = NetworkException(e)
             val networkAvailable = isNetworkAvailable()
             when (e) {
