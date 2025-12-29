@@ -1,6 +1,5 @@
 package com.ayvytr.coroutines
 
-import androidx.collection.intListOf
 
 /**
  * @author Do
@@ -19,7 +18,7 @@ class TestClass {
 
         val s:String = test1()!!
 
-        val list = intListOf(1, 2, 3)
+        val list = listOf(1, 2, 3)
 
         System.out.println(list.indexOfFirst {
             it == 1

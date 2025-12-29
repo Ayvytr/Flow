@@ -10,7 +10,7 @@ import com.ayvytr.network.ApiClient
 /**
  * @author EDZ
  */
-class MainViewModel : BaseViewModel() {
+class MainViewModel : BaseViewModel<MainView>() {
     val api = ApiClient.get(Api::class.java)
 
 
@@ -19,11 +19,8 @@ class MainViewModel : BaseViewModel() {
         success: (BaseGank) -> Unit,
         error: ((NetworkException) -> Unit)? = null
     ) {
-        launchFlow({ api.getAndroidGankSuspend() }, true, retry, true, success, error)
+        launchFlow({ api.getAndroidGankSuspend() },success, error!!,  true, retry, true )
     }
 
-    fun getAndroidPostInterface(observer: ResponseObserver<BaseGank>) {
-        launchFlow({ api.getAndroidGankSuspend() }, true, false, true, observer)
-    }
 
 }
