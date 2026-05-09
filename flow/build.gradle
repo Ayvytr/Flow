@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 34
     namespace 'com.ayvytr.flow'
 
 
@@ -46,5 +46,8 @@ dependencies {
 
     implementation libs.logger
     implementation libs.network
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
 }
 

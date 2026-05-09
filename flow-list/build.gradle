@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 34
     namespace 'com.ayvytr.flowlist'
 
     defaultConfig {
