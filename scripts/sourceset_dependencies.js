@@ -1,1 +1,1 @@
-sourceset_dependencies='{":flow-list/debug":[],":flow-list/main":[],":flow-list/release":[]}'
+sourceset_dependencies='{":flow/debug":[],":flow/main":[],":flow/release":[]}'
